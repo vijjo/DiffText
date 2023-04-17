@@ -27,7 +27,3 @@ def equalize(s1, s2):
         res2 += l2[match.b:match.b+match.size]
         prev = match
     return untokenize(res1), untokenize(res2)
-
-s1 = "It is warm. It is summer."
-s2 = "It is not warm. It is winter."
-pprint(equalize(s1, s2))
