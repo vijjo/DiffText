@@ -9,7 +9,6 @@ def clean_sentence(example):
     example = example.replace('<br/>', '')
     example = example.replace('<b>', '')
     example = example.replace('</b>', '')
-    example = example.replace('bhikkhu', '')
     example = example.replace('bhikkhave', '')
     example = example.replace('  ', ' ')
     example = example.translate(str.maketrans('', '', "'?.!-,"))
@@ -29,13 +28,28 @@ def example_group(source, sutta, example):
 csv_file = "dps-dpd-ex.csv"
 # lower_bound = float(input('lower bound: '))
 # upper_bound = float(input('upper bound: '))
-count = 0
-total = 0
+simple_bound = 96
+partial_bound = 95
+count_removed_example = 0
+total_example = 0
 modified_entry = 0
 total_entry = 0
 with open(csv_file) as f:
-    reader = csv.DictReader(f, delimiter='\t')
-    for index, row in enumerate(reader):
+    reader = csv.reader(f, delimiter='\t')
+    headings = next(reader)
+for i in range(1, 7):
+    headings.append(f'u{i}_source')
+    headings.append(f'u{i}_sutta')
+    headings.append(f'u{i}_example')
+# pprint(headings)
+
+
+with open(csv_file) as f, open("unified_data.csv", "w") as f_out:        
+    dict_reader = csv.DictReader(f, delimiter='\t')
+    dict_writer = csv.DictWriter(f_out, headings, delimiter='\t')
+    dict_writer.writeheader()
+    # read csv into dictionary
+    for index, row in enumerate(dict_reader):
         total_entry += 1
         # if index == 1020:
         #     break
@@ -49,65 +63,47 @@ with open(csv_file) as f:
             if row[f'Example{i}']:
                 group = example_group(row[f'Source{i}'], row[f'Sutta{i}'], row[f'Example{i}'])
                 example_list.append(group)
-        removed_list = []
-        stored_list = []
-        # if bool(example_list):
+        # unified_list = dpd_list + example_list
+        # original_list = unified_list.copy()
+        # if row['Pāli1'] == 'viditvā 2':
+        #     pprint(dpd_list)
+        #     pprint(example_list)
         modified = False
         for unit in example_list[:]:
-            total += 1
+            total_example += 1
             removed = False
             for dpd in dpd_list:
                 example_cleaned = clean_sentence(unit['example'])
                 dpd_cleaned = clean_sentence(dpd['example'])
-                seq = SequenceMatcher(a=example_cleaned, b=dpd_cleaned)
-                # print(seq.ratio())
-                # print(fuzz.ratio(example_cleaned, dpd_cleaned))
-                # print("----------------")
-                fuzz_ratio = fuzz.partial_ratio(example_cleaned, dpd_cleaned)
-                # if seq.ratio() < 0.2 and fuzz_ratio >= 90:
-                #     print("\n----------------------------------------------------")
-                #     print(f'Similarity: {seq.ratio()}\t\tFuzz: {fuzz_ratio}')
-                #     print_diff(example_cleaned, dpd_cleaned)
-                if seq.ratio() >= 0.95 or fuzz_ratio >= 95:
-                    # print(f"Removed: {unit['example']}")
+                simple_ratio = fuzz.ratio(example_cleaned, dpd_cleaned)
+                partial_ratio = fuzz.partial_ratio(example_cleaned, dpd_cleaned)
+                if simple_ratio >= simple_bound or partial_ratio >= partial_bound:
                     removed = True
                     break
-                # elif seq.ratio() >= 0.85 fuzz_ratio >= 90:
-                #     print("\n----------------------------------------------------")
-                #     print(f'Similarity: {seq.ratio()}\t\tFuzz: {fuzz_ratio}')
-                #     print_diff(example_cleaned, dpd_cleaned)
-                #     removed = True
-                #     break
             if removed:
                 modified = True
-                count += 1
+                count_removed_example += 1
                 example_list.remove(unit)
         if modified:
             modified_entry += 1 
-                    # count += 1
-                    # print("\n----------------------------------------------------")
-                    # print(f'Similarity: {seq.ratio()}\t\tFuzz: {fuzz_ratio}')
-                    # print_diff(example_cleaned, dpd_cleaned)
-            
-        # print(f"{row['ID']}\t\t{row['Pāli1']}")
-        # print('PDD_LIST:')
-        # pprint(dpd_list)
-        # print('EXAMPLE_LIST:')
-        # pprint(example_list) 
-        # print('----------------------------------')
-    #     total += 1
-    #     dpd_1 = clean_sentence(row['DPD-Example1'])
-    #     example_1 = clean_sentence(row['Example1'])
-    #     seq = SequenceMatcher(a=dpd_1, b=example_1)
-    #     if seq.ratio() >= lower_bound and seq.ratio() <= upper_bound:
-    #         count += 1
-    #         print("\n----------------------------------------------------")
-    #         print(f"{row['ID']}\t{row['Pāli1']}")
-    #         print('----')
-    #         print(seq.ratio())
-    #         print_diff(dpd_1, example_1)
-    # print(f"lower bound: {lower_bound}, upper bound: {upper_bound}")
-    print(f'Total number of examples: {total}')
-    print(f'Removed examples: {count}')
-    print(f'Total number of words: {total_entry}')
-    print(f'Modified words:: {modified_entry}')
+        unified_list = dpd_list + example_list
+        # if simple_ratio >= 96 or partial_ratio >= 95:
+        #     pprint(original_list)
+        #     print("--------------")
+        #     pprint(unified_list)
+        #     print(simple_ratio, partial_ratio)
+        # if count == 2:
+        #     break
+
+
+        for i, unified in enumerate(unified_list):
+            i += 1
+            row[f'u{i}_source'] = unified['source']
+            row[f'u{i}_sutta'] = unified['sutta']
+            row[f'u{i}_example'] = unified['example']
+        dict_writer.writerow(row)
+        
+print(f'Total number of examples: {total_example}')
+print(f'Removed examples: {count_removed_example}')
+print(f'Total number of words: {total_entry}')
+print(f'Modified words:: {modified_entry}')
