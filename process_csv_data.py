@@ -31,7 +31,7 @@ def ratios(sent1, sent2):
     return [simple, partial, token_sort, token_set]
 
 
-def example_group(source, sutta, example, dpd) :
+def example_group(source, sutta, example, dpd):
     group = {'source': source, 'sutta': sutta, 'example': example, 'dpd': dpd}
     return group
 
@@ -92,7 +92,8 @@ with open(csv_file) as f, open("unified_data.csv", "w") as f_out, open('deleted_
                 example_cleaned = clean_sentence(unit['example'])
                 dpd_cleaned = clean_sentence(dpd['example'])
                 simple_ratio = fuzz.ratio(example_cleaned, dpd_cleaned)
-                partial_ratio = fuzz.partial_ratio(example_cleaned, dpd_cleaned)
+                partial_ratio = fuzz.partial_ratio(
+                    example_cleaned, dpd_cleaned)
                 # print(ratios(example_cleaned, dpd_cleaned))
                 # print_diff(example_cleaned, dpd_cleaned)
                 if simple_ratio >= simple_bound or partial_ratio >= partial_bound:
