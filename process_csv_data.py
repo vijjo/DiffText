@@ -8,8 +8,7 @@ import re
 
 def clean_sentence(example):
     example = re.sub(r'<[^>]+>', '', example)
-    example = example.replace('bhikkhave', '')
-    example = example.replace('bhante', '')
+    example = re.sub(r'\b(bhante|bhikkhave)\b', '', example)
     example = example.replace('&nbsp;', ' ')
     example = example.translate(str.maketrans('', '', "'?.!-,"))
     example = re.sub(r'\s+', ' ', example)
@@ -48,7 +47,7 @@ total_entry = 0
 with open(csv_file) as f:
     reader = csv.reader(f, delimiter='\t')
     headings = next(reader)
-    pprint(headings)
+    # pprint(headings)
 for i in range(1, 7):
     headings.append(f'u{i}_source')
     headings.append(f'u{i}_sutta')
@@ -59,7 +58,10 @@ for i in range(1, 7):
     headings.append(f'u{i}_sbs_chapter')
 # pprint(headings)
 
-with open(csv_file) as f, open("unified_data.csv", "w") as f_out, open('deleted_example.txt', 'w') as deleted_out, open('unmodified_entry.txt', 'w') as unmodified_out:
+with open(csv_file) as f, \
+        open('output/unified_data.csv', 'w') as f_out, \
+        open('output/deleted_example.txt', 'w') as deleted_out, \
+        open('output/unmodified_entry.txt', 'w') as unmodified_out:
     dict_reader = csv.DictReader(f, delimiter='\t')
     dict_writer = csv.DictWriter(f_out, headings, delimiter='\t')
     dict_writer.writeheader()
@@ -76,13 +78,25 @@ with open(csv_file) as f, open("unified_data.csv", "w") as f_out, open('deleted_
                 group = example_group(
                     row[f'DPD_source_{i}'], row[f'DPD_sutta_{i}'], row[f'DPD_example_{i}'], True)
                 dpd_list.append(group)
+        sbs_class_examples = []
+        sbs_examples = []
+        other_examples = []
         example_list = []
         for i in range(1, 5):
             if row[f'sbs_example_{i}']:
                 group = example_group(
                     row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False, 
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
-                example_list.append(group)
+                if i == 3 and row['sbs_class_anki']:
+                    sbs_class_examples.append(group)
+                elif row[f'sbs_chapter_{i}']:
+                    sbs_examples.append(group)
+                else:
+                    other_examples.append(group)
+        if sbs_examples:
+            example_list = sbs_examples[0:1] + sbs_class_examples + sbs_examples[1:] + other_examples
+        else:
+            example_list = sbs_class_examples + other_examples
         deleted_list = []
         modified = False
         for unit in example_list[:]:
@@ -94,32 +108,20 @@ with open(csv_file) as f, open("unified_data.csv", "w") as f_out, open('deleted_
                 simple_ratio = fuzz.ratio(example_cleaned, dpd_cleaned)
                 partial_ratio = fuzz.partial_ratio(
                     example_cleaned, dpd_cleaned)
-                # if row['pali_1'] == 'akata 2':
-                #     print(ratios(example_cleaned, dpd_cleaned))
-                #     print(show_diff(example_cleaned, dpd_cleaned))
-                #     print(dpd_cleaned.count(' ') + 1, example_cleaned.count(' ') + 1)
-                #     print(dpd['source'], dpd['sutta'])
-                #     print(unit['source'], unit['sutta'])
-                if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND:
+                if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND or \
+                    (partial_ratio >= 94 and unit['source'] == dpd['source']):
+                    dpd['chant_pali'] = unit['chant_pali']
+                    dpd['chant_eng'] = unit['chant_eng']
+                    dpd['sbs_chapter'] = unit['sbs_chapter']
                     removed = True
                     deleted_list.append(example_cleaned)
                     break
-                elif partial_ratio >= 94 and unit['source'] == dpd['source']:
-                #     print(row['id'], row['pali_1'])
-                #     print(ratios(example_cleaned, dpd_cleaned))
-                #     print(show_diff(example_cleaned, dpd_cleaned))
-                #     print(dpd_cleaned.count(' ') + 1, example_cleaned.count(' ') + 1)
-                #     print(dpd['source'], dpd['sutta'])
-                #     print(unit['source'], unit['sutta'])
-                #     print('----------------------------------------------------------------')
-                    removed = True
-                    deleted_list.append(example_cleaned)
-                    break
-                    
             if removed:
                 modified = True
                 count_deleted_example += 1
                 example_list.remove(unit)
+        
+        # write into txt files: deleted_examples & unmodified entries
         if modified:
             modified_entry += 1
             deleted_out.write(f"{row['id']}\t{row['pali_1']}\n")
@@ -127,8 +129,9 @@ with open(csv_file) as f, open("unified_data.csv", "w") as f_out, open('deleted_
                 deleted_out.write(f'•\t{example_cleaned}\n')
         else:
             unmodified_out.write(f"{row['id']}\t{row['pali_1']}\n")
+        
+        # write unified_data.csv
         unified_list = dpd_list + example_list
-
         for i, unified in enumerate(unified_list):
             i += 1
             row[f'u{i}_source'] = unified['source']
