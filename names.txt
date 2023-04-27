@@ -1,0 +1,611 @@
+pali_1,pos,meaning_1,family_set
+akkosakabhāradvāja,masc,name of a Brahman; one of three brothers,names of Brahmans
+aggikabhāradvāja,masc,personal name of an arahant monk,names of monks; names of arahants
+aggidatta,masc,name of Kakusandha Buddha's father,names of laypeople
+aggivessa,masc,name of a minister,names of laypeople
+aṅgulimāla,masc,personal name of an arahant monk,names of monks; names of arahants
+aciravata,masc,name of novice,names of monks
+acelakassapa,masc,name of a naked ascetic,names of ascetics
+accutā,masc,name of a group of deities,names of deities
+ajita 1,masc,name of an ascetic teacher,names of ascetics; six ascetic teachers
+ajita 2,masc,name of a Licchavi military general,names of laypeople
+ajjuka 2,masc,name of a monk,names of monks
+aññākoṇḍañña,masc,name of the Buddha's first disciple; first person to realise the Buddha's teaching,names of monks
+aññāsikoṇḍañña,masc,name of the Buddha's first disciple; first person to realise the Buddha's teaching,names of monks; names of arahants
+atula 1,masc,name of a man,names of laypeople
+anāthapiṇḍika,masc,name of the Buddha's chief lay disciple,names of lay disciples
+anurādha,masc,name of a monk,names of monks
+anuruddha 1,masc,name of a monk; great disciple of the Buddha; foremost monk in the divine eye; cousin of the Buddha,names of monks; great disciples; names of arahants
+anejakā,masc,name of a group of deities,names of deities
+antaka,masc,Death,names of deities
+annabhāra 2,masc,name of a wandering ascetic,names of ascetics
+abhaya 3,masc,name of a Licchavi layman,names of lay disciples
+abhijika,masc,name of a monk,names of monks
+abhibhū 2,masc,overlord; supreme being,names of deities
+ambaṭṭha,masc,name of a young Brahman,names of Brahmans
+aranemi,masc,name of a teacher of old,names of ascetics
+ariṭṭha 1.1,masc,name of a monk,names of monks
+ariṭṭhakā,masc,name of a group of deities,names of deities
+aruṇā,masc,name of a group of deities,names of deities
+asama 1,masc,name of a deity,names of deities
+asibandhakaputta,masc,name of a layman,names of lay disciples
+asurindakabhāradvāja,masc,name of a Brahman; one of three brothers,names of Brahmans
+assaji 1.1,masc,name of a monk; Sāriputta's teacher,names of monks; names of arahants
+ahiṃsakabhāradvāja,masc,personal name of an arahant monk,names of monks; names of arahants
+ākoṭaka,masc,name of a deity,names of deities
+ānanda 2,masc,"name of the Buddha's attendant; great disciple of the Buddha; foremost disciple in great learning, remembrance, conduct, resoluteness and service",names of monks; great disciples
+ābhassarā,masc,radiant gods; effulgent deities,names of deities
+ābhijjika,masc,name of a monk,names of monks
+ābhiñjika,masc,name of a monk,names of monks
+ārāmadaṇḍa,masc,name of a Brahman,names of Brahmans
+ārohanta,masc,name of a former minister who became a monk,names of monks
+āsavā,masc,name of a group of deities,names of deities
+āḷavikā,fem,name of a nun,names of nuns
+āḷāra,masc,name of the Buddha's first teacher; Āḷāra Kālāma,names of ascetics
+indaka,masc,name of a spirit,names of deities
+isidatta,masc,name of a monk,names of monks
+ugga 3,masc,name of a householder,names of laypeople
+ugga 4,masc,name of a minister,names of laypeople
+uggasena,masc,name of a layman; son of a banker in Rājagaha,names of laypeople
+uṇṇābha,masc,name of a Brahmin,names of Brahmans
+uttara 11,masc,name of a young Brahman,names of Brahmans
+uttara 2.6,masc,name of a deity,names of deities
+uttarā 3,fem,name of a young female spirit,names of deities
+uttarānandamātar,fem,name of a female lay disciple; foremost among meditators,names of laypeople; great disciples
+uttiya 1,masc,name of a wandering ascetic,names of ascetics
+uttiya 2,masc,personal name of an arahant monk,names of monks; names of arahants
+udaka 2.1,masc,name of the Buddha's second teacher; Udaka Rāmaputta,names of ascetics
+udaya 3,masc,name of a monk addressed in Sutta Nipāta 5.14 (SNP 68),names of monks
+udāyī 1,masc,name of a monk; Kāḷudāyi,names of monks
+udāyī 2,masc,name of a monk; Paṇḍitaudāyi,names of monks
+uddaka,masc,name of the Buddha's second teacher; Uddaka Rāmaputta,names of ascetics
+upaka 1,masc,name of an arahant,names of arahants
+upaka 2,masc,name of an ascetic; first person the Buddha met after his enlightenment,names of ascetics
+upacālā,fem,name of a nun,names of nuns
+upatissa,masc,name of Sāriputta,names of monks; great disciples
+upananda 1,masc,name of the military general of Magadha,names of laypeople
+upavāna,masc,name of a monk; attendant of the Buddha,names of monks
+upāli 1,masc,name of a layman,names of laypeople
+upāli 2,masc,name of a monk; great disciple of the Buddha; foremost disciple of those learned in the Vinaya,names of monks; great disciples
+uppalavaṇṇā,fem,name of a nun,names of nuns
+uruvelakassapa,masc,name of a monk; great disciple of the Buddha; foremost in those with a large following,names of monks; great disciples
+esukārī,masc,name of a Brahman,names of Brahmans
+ojasi,masc,name of a deity,names of deities
+odātagayhā,masc,name of a group of deities,names of deities
+opamañña 2,masc,name of a deity,names of deities
+kakudha 1,masc,name of a deity,names of deities
+kaṅkhārevata,masc,name of a monk; great disciple of the Buddha; foremost in jhāna,names of monks; great disciples
+kaccānagotta 2,masc,name of a monk,names of monks
+kaṭamodakatissaka,masc,name of a monk,names of monks
+kaṭamorakatissaka,masc,name of a monk,names of monks
+kaṭṭhakā,masc,name of a group of deities,names of deities
+kaṇḍarāyana,masc,name of a Brahman,names of Brahmans
+katamodakatissaka,masc,name of a monk,names of monks
+katamorakatissaka,masc,name of a monk,names of monks
+kandaraka,masc,name of a wandering ascetic,names of ascetics
+kandarāyana,masc,name of a Brahman,names of Brahmans
+kappitaka,masc,name of a monk,names of monks
+kappina,masc,name of a monk; great disciple of the Buddha; foremost disciple in instructing the monks,names of monks; great disciples
+kambalassatarā,masc,name of two groups of nāgas,names of deities
+karatiya 1,masc,name of a supernatural being,names of deities
+karambhā 2,masc,name of a group of deities,names of deities
+kasikabhāradvāja,masc,name of a Brahman,names of Brahmans
+kasibhāradvāja,masc,name of a Brahman,names of Brahmans
+kassapa 2,masc,name of a deity,names of deities
+kassapagotta,masc,name of a monk,names of monks
+kaḷārakhattiya,masc,name of a monk,names of monks
+kaḷāramaṭṭaka,masc,name of a naked ascetic,names of ascetics
+kaḷibha,masc,name of a lay disciple,names of laypeople
+kāṇamātā,fem,name of a lay disciple,names of laypeople
+kātiyānī,fem,name of a female lay disciple; foremost among those with absolute faith,names of laypeople; great disciples
+kāpilavatthavā,masc,name of a group of demons,names of deities
+kāmada 1,masc,name of a deity,names of deities
+kāmabhū,masc,name of a monk,names of monks
+kāmaseṭṭha,masc,name of a deity,names of deities
+kāraṇapālī,masc,name of a Brahman,names of Brahmans
+kārāyana,masc,name of king Pasenadi's charioteer,names of laypeople
+kālakañcā,masc,name of a group of demons,names of deities
+kālakañcikā,masc,name of a group of demons,names of deities
+kālakañjā,masc,name of a group of demons,names of deities
+kālakañjikā,masc,name of a group of demons,names of deities
+kāḷakhemaka,masc,name of a Sakyan layman,names of laypeople
+kāḷigodhā,fem,name of a Sakyan laywoman,names of laypeople
+kāḷigodhāyaputta,masc,name of a monk; great disciple of the Buddha; foremost in those from eminent families,names of monks; great disciples
+kāḷī 2,fem,name of female slave in Sāvatthī,names of laypeople
+kāḷī 3,fem,name of Mahāmoggallāna's sister in a previous incarnation,names of deities
+kāḷudāyitthera,masc,name of a monk,names of monks
+kāḷudāyī,masc,name of a monk; great disciple of the Buddha; foremost in those who inspire confidence in families,names of monks; great disciples
+kimila,masc,name of a monk; associate of Anuruddha,names of monks
+kimbila,masc,name of a monk; associate of Anuruddha,names of monks
+kirapatika,masc,name of a layman,names of laypeople
+kisa 2,masc,name of an ascetic; Kisa Saṃkicca,names of ascetics
+kisāgotamī,fem,name of a nun,names of nuns
+kuṭikaṇṇa,masc,name of a monk; great disciple of the Buddha; foremost in eloquence,names of monks; great disciples
+kuṭumbika,masc,name of a layman,names of laypeople
+kuṇḍaliya,masc,name of a wandering ascetic,names of ascetics
+kuddālaka,masc,name of a teacher of old,names of ascetics
+kumārakassapa,masc,name of a monk; foremost in talking on diverse topics,names of monks; great disciples
+kūṭadanta,masc,name of a Brahman,names of Brahmans
+kesi,masc,name of a horse trainer,names of laypeople
+kokanadā,fem,name of a goddess,names of deities
+kokanuda,masc,name of a wandering ascetic,names of ascetics
+kokālika,masc,name of a monk,names of monks
+kolita,masc,name of a monk,names of monks
+koḷivisa,masc,name of a family clan,names of monks; great disciples
+khaṇḍa 5,masc,name of one of Vipassī Buddha's chief disciples,names of monks
+khaṇḍadeva,masc,name of an arahant,names of arahants
+khaṇḍadevi,fem,name of a monk's mother,names of laypeople
+khiḍḍāpadosikā,masc,name of a group of deities,names of deities
+khujjuttarā,fem,name of a lay disciple,names of laypeople
+khema 3,masc,name of a deity,names of deities
+khemaka 1,masc,name of an arahant,names of arahants
+khemātherī,fem,name of a nun,names of nuns
+gaṇakamoggallāna,masc,name of a Brahman accountant,names of Brahmans
+gandhabba 3,masc,name of a minister,names of laypeople
+gavampati,masc,name of an arahant monk,names of monks; names of arahants
+gavampatitthera,masc,name of a monk,names of monks
+gavesī 3,masc,name of a monk at the time of Kassapa Buddha,names of monks
+girimānanda,masc,name of a monk,names of monks
+girimānandatthera,masc,name of a monk,names of monks
+guttila,masc,name of a musician; previous incarnation of the Buddha,names of laypeople
+gotamatthera,masc,name of a monk,names of monks
+godatta,masc,name of a monk,names of monks
+godhika,masc,name of a monk,names of monks
+gopakamoggallāna,masc,name of a Brahman,names of Brahmans
+gopāla 2,masc,name of a spirit,names of deities
+govinda,masc,name of a Brahman,names of Brahmans
+ghaṭī,fem,name of a deity,names of deities
+ghaṭīkāra,masc,name of a deity,names of deities
+cakkapāṇī,masc,God Vishnu (in whose hand is a disc),names of deities
+caṇḍa 2,masc,name of a chieftain,names of laypeople
+caṇḍakāḷī,fem,name of a nun,names of nuns
+candana 2,masc,name of a deity,names of deities
+candanaṅgalika,masc,name of a layman,names of lay disciples
+candima 2,masc,name of a deity who lives in the moon,names of deities
+candimasa,masc,name of a deity,names of deities
+candimāsa,masc,name of a deity,names of deities
+cāla,masc,name of a monk,names of monks
+citta 2.4,masc,name of a householder lay-disciple; foremost lay disciple in giving Dhamma talks,names of lay disciples; great disciples
+citta 2.5,masc,name of a monk; Citta Hatthisāriputta,names of arahants
+cittasena,masc,name of a demigod,names of deities
+ciravāsimātar,fem,name of a lay woman,names of laypeople
+ciravāsī,masc,name of Bhadraka's son,names of laypeople
+cunda 1,masc,name of a monk,names of monks
+cullakokanadā,fem,name of a goddess,names of deities
+cullapanthaka,masc,name of a monk; great disciple of the Buddha; foremost in creating a mind made body,names of monks; great disciples
+cūḷakokanadā,fem,name of a goddess,names of deities
+cūḷapanthaka,masc,name of a monk; great disciple of the Buddha; foremost in creating a mind made body,names of monks; great disciples
+channa 2.3,masc,personal name of an arahant monk,names of monks; names of arahants
+jaṭābhāradvāja,masc,name of a Brahman,names of Brahmans
+jaṭilavāsikā,fem,name of a nun,names of nuns
+janesabha,masc,name of a demigod,names of deities
+janosabha,masc,name of a demigod,names of deities
+jantu 2,masc,name of a deity,names of deities
+jambuka,masc,name of an ascetic,names of ascetics
+jambukhādaka,masc,name of a wandering ascetic,names of ascetics
+jāṇusoṇī,masc,name of a rich Brahman,names of Brahmans
+jāṇussoṇi,masc,name of a rich Brahman,names of Brahmans
+jāṇussoṇī,masc,name of a rich Brahman,names of Brahmans
+jīvaka,masc,name of a doctor,names of lay disciples
+jotika 2,masc,name of a householder,names of laypeople
+jotināmā,masc,name of a group of deities,names of deities
+jotipāla,masc,name of a monk,names of monks
+tatojasī,masc,name of a deity,names of deities
+tatotalā,masc,name of a group of deities,names of deities
+tatolā,masc,name of a group of deities,names of deities
+tattalā,masc,name of a group of deities,names of deities
+tapassa,masc,name of a lay disciple,names of laypeople
+tapassubhallikā,masc,name of two laymen; great disciples of the Buddha; foremost in first taking refuge in the Buddha,names of laypeople; great disciples
+tapussa,masc,name of a lay disciple,names of laypeople
+tapussabhallikā,masc,name of two laymen; great disciples of the Buddha; foremost in first taking refuge in the Buddha,names of laypeople; great disciples
+tavakaṇṇika,masc,name of a lay disciple,names of laypeople
+tāyana 1,masc,name of a deity,names of deities
+tārukkha,masc,name of a Brahman teacher,names of Brahmans
+tālapuṭa,masc,name of a monk,names of monks; names of arahants
+tālaputta,masc,name of a monk,names of monks; names of arahants
+tikaṇṇa,masc,name of a Brahman,names of Brahmans
+tipiṭakacūḷanāgatthera,masc,name of a Tipiṭaka teacher quoted by Buddhaghosa,names of monks
+tissaka,masc,name of a monk (in reference to Saṃyutta Nikāya 6.8 Katamodakatissasuttaṃ),names of monks
+tuṭṭha 2,masc,name of a lay disciple,names of laypeople
+tudu,masc,name of a independent Brahma,names of deities
+turū,masc,name of a independent Brahma,names of deities
+tuvaṭaka,masc,name of an ascetic,names of ascetics
+tuvaṭṭaka,masc,name of an ascetic,names of ascetics
+tejasi,masc,name of a deity,names of deities
+thullatissā,fem,name of a nun,names of nuns
+thullanandā,fem,name of a notorious nun,names of nuns
+daṇḍapāṇī 2,masc,name of a Sakyan layman,names of laypeople
+dadhimukha,masc,name of a spirit,names of deities
+dasama 2,masc,name of a householder,names of lay disciples
+daḷhika,masc,name of a monk,names of monks
+dāmali,masc,name of a deity,names of deities
+dārukammika,masc,name of a layperson,names of laypeople
+dārucīriya,adj,family names of an ascetic; great disciple of the Buddha; foremost disciple in quick realization; Bāhiya Dārucīriya,names of ascetics; great disciples
+dīgha 3,masc,name of a spirit,names of deities
+dīghatapassī,masc,name of Jain ascetic,names of ascetics
+dīghanakha,masc,name of a wandering ascetic,names of ascetics
+dīghalaṭṭhi,masc,name of a deity,names of deities
+dīghāvu,masc,name of a lay disciple,names of laypeople
+dummukha 2,masc,name of a Licchavi,names of laypeople
+dūsī 2,masc,name of a Māra; previous incarnation of Mahāmoggallāna,names of deities
+devadatta,masc,name of a monk; relative and nemesis of the Buddha,names of monks
+devala,masc,name of an ascetic,names of ascetics
+devahita,masc,name of a Brahman,names of Brahmans
+dhanañjānī,fem,name of a Brahman woman,names of Brahmans
+dhaniya,masc,name of a monk infamous for the second pārājika,names of monks
+dhammadinna,masc,name of a lay disciple,names of laypeople
+dhammadinnā,fem,name of a nun,names of nuns
+dhammarakkhita 2,masc,generic monk's name used in vinaya examples,names of monks
+dhammasava,masc,name of an arahant,names of arahants
+dhānañjānī,fem,name of a Brahman woman,names of Brahmans
+nakula 2,masc,name of a person who's parents were great disciples,names of laypeople
+nakulapitar,masc,name of a householder,names of laypeople
+nakulamātar,fem,name of a female lay disciple; foremost among those who are trustworthy,names of laypeople; great disciples
+nanda 1,masc,name of a deity,names of deities
+nanda 2,masc,name of an ascetic; Nanda Vaccha,names of ascetics
+nanda 3,masc,name of a cowherd,names of monks; names of arahants
+nandaka 1,masc,name of a monk,names of monks
+nandana 1,masc,name of a deity,names of deities
+nandamātar,fem,name of an eminent lay disciple,names of laypeople
+nandavatī,fem,name of nun,names of nuns
+nandiya,masc,name of a monk,names of monks; names of arahants
+nandivisāla,masc,name of a deity,names of deities
+namuci,masc,name of Māra,names of deities
+navakammikabhāradvāja,masc,name of a Brahman,names of Brahmans
+naḷeru,masc,(comm) name of a spirit; (or) growing in the hollow of a tree; (or) growing in a thicket of reeds,names of deities
+naḷorāja,masc,name of a demigod,names of deities
+nāgattherī,fem,name of a Sri Lankan nun,names of nuns
+nāgadatta,masc,name of a monk,names of monks
+nāgasamāla,masc,name of a monk,names of monks
+nāgita,masc,name of the Buddha's attendant for some time,names of monks
+nārada,masc,name of a monk,names of monks
+nālaka,masc,name of an ascetic,names of ascetics
+nāvindakī,masc,name of a minister,names of laypeople
+nāḷijaṅgha,masc,name of a Brahman,names of Brahmans
+nika,masc,name of a deity,names of deities
+nigaṇṭha 2,masc,epithet of Mahāvīra,names of ascetics
+nigrodha 2,masc,name of a wandering ascetic,names of ascetics
+nigrodhakappa,masc,name of a monk; preceptor of Vaṅgīsa,names of monks
+niṅka,masc,name of a deity,names of deities
+nīka,masc,name of a deity,names of deities
+pakudha,masc,name of a ascetic teacher,names of ascetics; six ascetic teachers
+pakudhaka,masc,name of a ascetic teacher,names of ascetics; six ascetic teachers
+paccanīkasāta,masc,name of a Brahman,names of Brahmans
+pajjunna,masc,name of a deity; god of rain; rain cloud,names of deities
+pañcakaṅga,masc,name of a layperson,names of lay disciples
+pañcasikha 1,masc,name of a demigod,names of deities
+pañcālacaṇḍa,masc,name of a deity,names of deities
+pañcālaputta,masc,name of a monk,names of monks
+pañcāliputta,masc,name of a monk,names of monks
+paṭācārā,fem,name of a nun; great disciple of the Buddha; foremost in upholding monastic law,names of nuns; great disciples
+paṇḍitakumāraka,masc,name of a Licchavi,names of laypeople
+paṇḍuputta,masc,name of an Ājīvaka ascetic,names of ascetics
+panthaka,masc,name of a monk,names of monks
+payāgā 2,masc,name of a group of nāgas,names of deities
+parajana 1,masc,name of spirit,names of deities
+paranimmitā,masc,name of a group of deities,names of deities
+paramatta,masc,name of a god,names of deities
+parittasubha,adj,with limited beauty; epithet of a class of devas,names of deities
+parittābha,adj,with limited radiance; epithet of a class of devas,names of deities
+palagaṇḍa 2,masc,name of an arahant,names of arahants
+paviṭṭha 2,masc,name of a monk,names of monks
+pāṭaliya,masc,name of chieftain,names of laypeople
+pāṭika,masc,name of a wandering ascetic,names of ascetics
+pāṭikaputta,masc,name of a naked ascetic,names of ascetics
+pāthikaputta,masc,name of a naked ascetic,names of ascetics
+pāpimant 3,masc,evil one; evil personified; epithet of Māra,names of deities; epithets of Māra
+pāyāgā,masc,name of a group of nāgas,names of deities
+pāragā,masc,name of a group of deities,names of deities
+pārāpariya,masc,name of an arahant monk,names of monks
+pārāsiviya,masc,name of a Brahman teacher,names of Brahmans
+pāvārika 2,masc,name of a layman who offered a monastery to the Buddha,names of lay disciples
+piṅgaya,masc,name of an arahant,names of monks; names of arahants
+piṅgalakoccha,masc,name of a Brahman,names of Brahmans
+piṅgiya,masc,name of an arahant,names of monks; names of arahants
+piṅgiyāni,masc,name of a Brahman,names of Brahmans
+piyaka,masc,name of King Muṇḍa's treasurer,names of laypeople
+piyaṅkara,masc,name of a spirit,names of deities
+piyaṅkaramātar,fem,name of a female spirit,names of deities
+pilindavaccha,masc,name of a monk,names of monks
+pilotika,masc,name of a wandering ascetic,names of ascetics
+pukkusāti,masc,name of an arahant,names of arahants
+puṇṇa 3,masc,name of a Sakyan monk; Puṇṇa Mantāṇiputta; great disciple of the Buddha; foremost disciple in giving Dhamma talks,names of monks; great disciples
+puṇṇa 4,masc,name of a monk from Sunāparanta; Puṇṇa Sunāparanta,names of monks
+puṇṇa 5,masc,name of a Koliyan ascetic who performed the cow practice,names of ascetics
+puṇṇaka,masc,name of a deity,names of deities
+puṇṇamāsa,masc,name of a monk,names of arahants
+puṇṇiya,masc,name of a monk,names of monks
+punabbasu 1,masc,name of a spirit,names of deities
+punabbasu 2,masc,name of a monk; one of the group of six monks,names of monks
+punabbasumātar,fem,name of a female spirit,names of deities
+pūraṇa 1,masc,name of a ascetic teacher; Pūraṇa Kassapa,names of ascetics; six ascetic teachers
+pessa 2,masc,name of a layman,names of laypeople
+poṭṭhapāda 1,masc,name of a wandering ascetic,names of ascetics
+poṭṭhapāda 3,masc,constellation of Pegasus,names of ascetics
+potaliputta,masc,name of a wandering ascetic,names of ascetics
+potaliya,masc,name of a householder,names of laypeople
+phagguna 1,masc,name of a monk; Moḷiyaphagguna,names of monks
+phalagaṇḍa,masc,name of an arahant,names of arahants
+baka 1,masc,name of a god,names of deities
+bakulā,fem,name of a nun; great disciple of the Buddha; foremost in clairvoyance,names of nuns; great disciples
+bakkula,masc,name of a monk,names of monks
+bandhula,masc,name of a general,names of laypeople
+bahudantī,masc,name of an arahant,names of arahants
+bākula,masc,name of a monk,names of monks
+bāhiya,masc,name of an ascetic; great disciple of the Buddha; foremost disciple in quick realization; Bāhiya Dārucīriya,names of ascetics; great disciples; names of arahants
+bāhudantī,masc,name of an arahant,names of arahants
+bāhuraggi,masc,name of an arahant,names of arahants
+bilaṅgika 1,masc,name of a Brahman; one of three brothers,names of Brahmans
+bilaṅgikabhāradvāja,masc,name of a Brahman; one of three brothers,names of Brahmans
+bījaka 3,masc,name of Sudinna's son,names of laypeople
+bījakapitar,masc,epithet of Sudinna,names of monks
+bījakamātar,fem,epithet of Sudinna's ex-wife,names of laypeople
+buddhapiya,masc,name of a Tamil monk; author of Rūpasiddhi,names of monks
+begabbhari,masc,name of a deity,names of deities
+belaṭṭhasīsa,masc,name of a monk,names of monks
+belaṭṭhisīsa,masc,name of a monk,names of monks
+brahmadatta 1,adj,name of an ancient king,names of monks
+brahmadeva,masc,personal name of an arahant monk,names of monks; names of arahants
+brahmāyu,masc,name of a Brahman,names of Brahmans
+bhagalavatī,fem,name of a deity,names of deities
+bhaggavagotta,masc,name of a wandering ascetic,names of ascetics
+bhaṇḍa 2,masc,name of a monk,names of monks
+bhaṇḍu 1,masc,name of a monk,names of monks
+bhaddaji,masc,name of a monk,names of monks
+bhaddiya 1,masc,name of an arahant,names of arahants
+bhaddiya 2,masc,name of a Licchavi,names of laypeople
+bhadraka 2,masc,name of a chieftain,names of laypeople
+bharaṇḍu,masc,name of an ascetic; the Buddha's former companion under Āḷāra Kālāma,names of ascetics
+bhallika,masc,name of a lay disciple,names of laypeople
+bhāradvāja 1,masc,name of a Brahmin family,names of Brahmans; names of arahants
+bhūmija,masc,name of a monk,names of monks
+makkhali,masc,name of a ascetic teacher; Makkhali Gosāla,names of ascetics; six ascetic teachers
+makkhalipūraṇā,masc,Makkhali Gosāla and Pūraṇa Kassapa,names of ascetics; six ascetic teachers
+maṇi 2,masc,name of a spirit,names of deities
+maṇikaṇṭha,masc,name of a dragon,names of deities
+maṇicūḷaka,masc,name of a chieftain,names of laypeople
+maṇibhadda,masc,name of a spirit,names of deities
+manopadosikā,masc,name of a group of deities,names of deities
+manosatta,adj,epithet of a class of devas in Jain doctrine,names of deities
+mantāṇī,fem,name of a Brahman woman; mother of Aṅgulimāla,names of Brahmans
+mandavalāhakā,masc,name of a group of deities,names of deities
+mandiya 2,masc,name of a deity,names of deities
+mahaka,masc,name of a monk,names of monks
+mahākaccāna,masc,name of a monk; great disciple of the Buddha; foremost disciple in explaining a brief instruction in detail,names of monks; great disciples
+mahākaccāyana,masc,name of a monk; great disciple of the Buddha; foremost disciple in explaining a brief instruction in detail,names of monks; great disciples
+mahākappina,masc,name of a monk; great disciple of the Buddha; foremost disciple in instructing the monks,names of monks; great disciples
+mahākassapa,masc,name of a monk; great disciple of the Buddha; foremost disciple in preaching ascetic practices,names of monks; great disciples
+mahākoṭṭhika,masc,name of a monk; great disciple of the Buddha; foremost disciple in analytical understanding,names of monks; great disciples
+mahākoṭṭhita,masc,name of a monk; great disciple of the Buddha; foremost disciple in analytical understanding,names of monks; great disciples
+mahācunda,masc,name of a monk,names of monks
+mahānāma 1,masc,name of a Sakyan layman,names of lay disciples
+mahāpanthaka,masc,name of a monk; great disciple of the Buddha; foremost in those skilled in the expansion of perception,names of monks; great disciples
+mahāpāragā,masc,name of a group of deities,names of deities
+mahāmahinda,masc,Mahinda Mahāthera who brought the Dhamma to Sri Lanka,names of monks
+mahāmoggalāna,masc,name of a monk; chief disciple; great disciple of the Buddha; foremost disciple in psychic power,names of monks; great disciples
+mahāmoggallāna,masc,name of a monk; chief disciple; great disciple of the Buddha; foremost disciple in psychic power,names of monks; great disciples
+mahāli,masc,name of a Licchavi man,names of lay disciples
+mahāsamanā,masc,name of a group of deities,names of deities
+mahāsīvatthera,masc,name of a eminent commentator frequently quoted by Buddhaghosa,names of monks
+mahinda,masc,great Inda; lord of the gods,names of deities
+māgaṇḍiya,masc,name of a wandering ascetic,names of ascetics; names of monks; names of arahants
+māgha 1,masc,(comm) epithet of Sakka,names of deities; epithets of Sakka
+māṇavagāmiya,masc,name of a deity,names of deities
+māṇivara,masc,name of a spirit,names of deities
+mātalī,masc,name of Inda's charioteer,names of deities
+mānadinna,masc,name of a lay disciple,names of laypeople
+mānicara,masc,name of a spirit,names of deities
+mānusā,masc,name of a group of deities,names of deities
+mānusuttamā,masc,name of a group of deities,names of deities
+māra,masc,death; Death; death personified,names of deities
+mālukyaputta,masc,personal name of an arahant monk,names of monks; names of arahants
+migajāla,masc,name of an arahant monk,names of monks; names of arahants
+migalaṇḍika,masc,name of a monk,names of monks
+migasāṇā,fem,name of a female lay disciple,names of laypeople
+migasālā,fem,name of a female lay disciple,names of laypeople
+migāraseṭṭhi,masc,Migāra the millionaire,names of laypeople
+musila,masc,name of a monk,names of monks
+musīla,masc,name of a monk,names of monks
+mūgapakkha,masc,name of a teacher of old,names of ascetics
+mūsila,masc,name of a monk,names of monks
+meṇḍaka 2,masc,name of a lay disciple,names of laypeople
+meṇḍakanattar,masc,name of a man; Meṇḍaka's grandson,names of laypeople
+metteyya 2,masc,name of young Brahman,names of monks
+metteyyabuddha,masc,name of a mythical future Buddha,names of monks
+medakathālikā 2,fem,name of a acrobat; (comm) name of a male acrobat with a female name,names of laypeople
+moggalla,masc,name of a minister,names of laypeople
+moggallāna 1,masc,name of a monk; chief disciple; great disciple of the Buddha; foremost disciple in psychic power,names of monks; great disciples
+mogharāja,masc,name of a monk,names of monks
+moḷiyaphagguna,masc,name of a monk,names of monks
+moḷiyasīvaka,masc,name of a wandering ascetic,names of ascetics
+yamaka 2,masc,name of a monk,names of monks
+yamaka 4,masc,name of a minister,names of laypeople
+yamataggi,masc,name of a Vedic sage,names of Brahmans
+raṭṭhapāla,masc,personal name of an arahant monk,names of monks; names of arahants
+rattapāṇi,masc,name of a dyer,names of laypeople
+rammaka 1,masc,name of a Brahman,names of Brahmans
+rādha,masc,personal name of an arahant monk,names of monks; names of arahants
+rāma 2,masc,name of a sage; father of the Buddha's second teacher,names of ascetics
+rāsiya,masc,name of a chieftain,names of laypeople
+rāhu 1,masc,name of a asura lord,names of deities
+rāhula,masc,name of a monk; Buddha's son,names of monks; names of arahants
+revata,masc,name of a monk; great disciple of the Buddha; foremost disciple in forest dwelling,names of monks; great disciples
+rojā,masc,name of a group of deities,names of deities
+rohaṇa,masc,name of a young layman,names of laypeople
+rohitassa,masc,name of a deity,names of deities
+lakuṇḍakabhaddiya,masc,name of a monk,names of monks
+lakkhaṇa 7,masc,name of a monk,names of monks
+lambītakā,masc,name of a group of deities,names of deities
+lāmaseṭṭhā,masc,name of a group of deities,names of deities
+lomasakakaṅgiya,masc,name of a monk,names of monks
+lomasakaṅgiya,masc,name of a monk,names of monks
+lomasakaṃbhiya,masc,name of a monk,names of monks
+lomasavaṅgisa,masc,name of a monk,names of monks
+lohitavāsī,masc,name of a group of deities,names of deities
+sakulā,fem,name of a nun,names of nuns
+sakuludāyī,masc,name of a wandering ascetic,names of ascetics
+sakka 2,masc,Sakka; king of the Devas,names of deities
+saṅgārava,masc,name of a Brahman,names of Brahmans
+saṅgiya,masc,name of an arahant,names of arahants
+saccaka,masc,name of a Jain,names of ascetics
+sañcaya 2.1,masc,name of a ascetic teacher,names of ascetics; six ascetic teachers
+sañjaya 1,masc,name of a ascetic teacher,names of ascetics; six ascetic teachers
+sañjaya 2,masc,name of a Brahman,names of Brahmans
+sañjīva 2,masc,name of one of Kakusandha Buddha's chief disciples,names of monks; chief disciples
+sadāmattā,masc,name of a group of deities,names of deities
+saddha 3,masc,name of a monk,names of monks
+saddha 4,masc,name of a monk; son of Sudatta,names of monks
+sanaṅkumāra,masc,name of a god,names of deities
+sanaṅkumārabrahma,masc,name of a god,names of deities
+sandhāna 1,masc,name of a lay disciple,names of lay disciples
+sabhiya,masc,personal name of an arahant monk,names of monks; names of arahants
+samānā,masc,name of a group of deities,names of deities
+samiddhi 2,masc,name of a monk,names of monks
+samīti,masc,name of a wainwright in Sāvatthī,names of laypeople
+samuddadatta,masc,name of a monk,names of monks
+sambara,masc,name of an asura lord,names of deities
+sarakāni,masc,name of a Sakyan lay disciple,names of laypeople
+saraṇāni,masc,name of a Sakyan lay disciple,names of laypeople
+sarabha 2,masc,name of a wandering ascetic,names of ascetics
+saviṭṭha,masc,name of a monk,names of monks
+sahaka,masc,name of a monk in the time of Kassapa Buddha,names of monks
+sahadhammā,masc,name of a group of deities,names of deities
+sahampati,masc,name of the Brahma who implored the Buddha to teach,names of deities
+sahali,masc,name of a deity,names of deities
+sāgata 2,masc,name of a monk,names of monks
+sāṇa 3,masc,name of a layman,names of lay disciples
+sātāgirā,masc,name of a group of demons,names of deities
+sāti,masc,name of a monk,names of monks
+sādatta,masc,name of a lay disciple,names of laypeople
+sānu 2,masc,name of a spirit,names of deities
+sāmaṇḍaka,masc,name of a wandering ascetic,names of ascetics
+sāmaṇḍakāni,masc,name of a wandering ascetic,names of ascetics
+sāmāvatī,fem,name of a female lay disciple; foremost among those living in a state of friendliness,names of laypeople; great disciples
+sāragga,masc,name of a lay disciple,names of laypeople
+sāriputta,masc,name of a monk; chief disciple; great disciple of the Buddha; foremost disciple in great wisdom,names of monks; great disciples
+sāriputtamoggallānā,masc,name of a monks; chief disciples; great disciples of the Buddha; Sāriputta and Moggallāna,names of monks; great disciples
+sāḷha 1,masc,name of a layman; Visākha's grandson,names of lay disciples
+sāḷha 2,masc,name of a Licchavi layman,names of lay disciples
+sikhāmoggallāna,masc,name of a Brahman,names of Brahmans
+sigālaka 2,masc,name of a lay disciple,names of laypeople
+sigālamātar,fem,name of a nun; great disciple of the Buddha; foremost in unwavering confidence,names of nuns; great disciples
+siṅgālaka 2,masc,name of a lay disciple,names of laypeople
+siṅgālakamātar,fem,name of a nun; great disciple of the Buddha; foremost in unwavering confidence,names of nuns; great disciples
+siṅgiya,masc,name of an arahant,names of arahants
+sirivaḍḍha 1,masc,name of a Kosalan minister,names of laypeople
+sirivaḍḍha 2,masc,name of a lay disciple,names of laypeople
+sirīvaḍḍha,masc,name of a lay disciple,names of laypeople
+siva 2,masc,name of a deity; Shiva,names of deities
+sivaka,masc,name of a deity,names of deities
+sīsupacālā,fem,name of a nun,names of nuns
+sīsūpacālā,fem,name of a nun,names of nuns
+sīvaka,masc,name of a wandering ascetic,names of ascetics
+sīvali,masc,name of a monk; great disciple of the Buddha; foremost in receiving,names of monks; great disciples
+sīha 2,masc,name of a military general in Vesālī,names of laypeople
+sucimukhī,fem,name of female wandering ascetic,names of ascetics
+sudatta,masc,name of Anāthapiṇḍika; father of Saddha,names of lay disciples; great disciples
+sudassa 2,adj,beautiful to look at; epithet of a class of devas,names of deities
+sudassana 2,masc,name King Pasenadi's nephew,names of Brahmans
+sudassī,adj,epithet of a class of devas,names of deities
+sudinna 2,masc,name of a monk notorious for the first pārājika,names of monks
+suddhikabhāradvāja,masc,name of a Brahman,names of Brahmans
+sunakkhatta 2,masc,name of a former monk,names of monks
+sunetta,masc,name of a teacher of old,names of ascetics
+sundarikabhāradvāja,masc,name of a Brahman,names of Brahmans
+sundarī,fem,name of a nun,names of nuns
+sundarīnandā,fem,name of a nun,names of nuns
+supabbā,fem,name of a lay disciple,names of laypeople
+suppagedha,masc,name of a spirit,names of deities
+supparodha,masc,name of a spirit,names of deities
+suppavāsā,fem,name of a female lay disciple; foremost among those who offer excellent items,names of laypeople; great disciples
+subrahma 1,masc,name of a deity,names of deities
+subhakiṇha 2,adj,epithet of a class of devas,names of deities
+subhaṭa,masc,name of a lay disciple,names of laypeople
+subhadda 1,masc,personal name of an arahant monk; last person to get ordained under the Buddha,names of monks; names of arahants
+subhaddā 2,fem,name of Anāthapiṇḍika's daughter,names of laypeople
+subhā,fem,name of a nun,names of nuns
+subhūti 1,masc,name of a monk,names of monks
+surādha,masc,personal name of an arahant monk,names of monks; names of arahants
+susima 1,masc,name of a deity,names of deities
+susima 2,masc,name of a monk,names of monks
+susīma 1,masc,name of a deity,names of deities
+susīma 2,masc,name of a monk,names of monks
+suvīra,masc,name of a deity,names of deities
+sūcimukhī,fem,name of female wandering ascetic,names of ascetics
+sūrambaṭṭha,masc,name of a lay disciple; foremost among those with absolute faith,names of laypeople; great disciples
+sūriya 1,masc,sun,astronomical terms; names of deities
+sūriyavacchasā,fem,name of a female demigod,names of deities
+sūleyyarucirā,masc,name of two groups of deities,names of deities
+setaketu,masc,name of the Bodhisatta in Tusita heaven,names of deities
+seniya 2,masc,name of an ascetic who performed the dog practice,names of ascetics
+seniya 3,masc,name of a monk,names of monks; names of arahants
+seyyasaka,masc,name of a monk infamous for Pācittiya 1,names of monks
+serī 2.1,masc,name of a deity,names of deities
+serīsaka 2,masc,name of a spirit,names of deities
+sela 4,masc,personal name of an arahant monk,names of monks; names of arahants
+selā,fem,name of a nun,names of nuns
+soṇa 1,masc,name of a monk,names of monks; names of arahants
+soṇa 2,masc,name of a layman,names of lay disciples
+soṇakāyana,masc,name of a young Brahman,names of Brahmans
+somā,fem,name of a nun,names of nuns
+vakkali,adj,name of a monk; a former ascetic,names of monks
+vaṅganta,masc,name of a Brahman; Sāriputta's father,names of Brahmans
+vaṅgisa,masc,name of a monk; foremost disciple in spontaneous expression,names of monks; great disciples
+vaṅgīsa,masc,name of a monk; foremost disciple in spontaneous expression,names of monks; great disciples
+vacchagotta,masc,name of an ascetic,names of ascetics; names of monks; names of arahants
+vacchaputta,masc,name of an ascetic,names of ascetics
+vajirā,fem,name of a nun,names of nuns
+vajjiyamahita,masc,name of a lay disciple,names of laypeople
+vatrabhū,masc,(comm) name of Sakka; (or) epithet of Sakka,names of deities
+vappa 2,masc,name of a Sakyan,names of laypeople
+vayabhiññā,masc,name of two proponents of the doctrine of non-causality; Vaya and Bhiñña,names of ascetics
+varadhara,masc,name of a wandering ascetic,names of ascetics
+vasū,masc,name of a group of deities,names of deities
+vassakāra,masc,name of a Brahman; Ajātasattu's chief minister,names of Brahmans
+vassabhaññā,masc,name of two proponents of the doctrine of non-causality; Vassa and Bhañña,names of ascetics
+vassabhiññā,masc,name of two proponents of the doctrine of non-causality; Vassa and Abhiñña,names of ascetics
+vāmaka,masc,name of a Vedic sage,names of Brahmans
+vāsudatta,masc,name of a deity,names of deities
+vāseṭṭha 1,masc,name of a Vedic sage,names of ascetics
+vāseṭṭha 2,masc,name of a Brahman family,family names; names of Brahmans
+vijayamāhika,masc,name of a lay disciple,names of laypeople
+vijayā,fem,name of a nun,names of nuns
+viññāṇañcāyatanūpaga,adj,gone to the dimension of infinite consciousness; epithet of a class of devas,names of deities
+vidhura,masc,name of one of Kakusandha Buddha's chief disciples,names of monks; chief disciples
+vidhurasañjīva,nt,Vidhura and Sañjīva; Kakusandha Buddha's pair of chief disciples,names of monks; chief disciples
+virūḷha 2,masc,name of one of the Four Great Kings,names of deities
+visākha 2,masc,name of a lay disciple,names of lay disciples
+visākhā 1,fem,"name of the Buddha's chief female disciple, foremost female donor to the Saṅgha",names of lay disciples; great disciples
+vegabbhari,masc,name of a deity,names of deities
+veghanasā,masc,name of a group of deities,names of deities
+veṭambarī,masc,name of a deity,names of deities
+veṇḍu,masc,name of a deity; Vishnu,names of deities
+veṇḍudevā,masc,name of a group of deities,names of deities
+veṇhu,masc,name of a deity; Vishnu,names of deities
+veṇhū,masc,name of a group of deities,names of deities
+vedehikā,fem,name of a laywoman in Sāvatthī,names of laypeople
+velāma,masc,name of the Buddha in a previous incarnation,names of laypeople
+vessavaṇa,masc,name of one of the Four Great Kings,names of deities
+vessāmitta,masc,name of a Vedic sage,names of Brahmans
+vessāmittā,masc,name of a group of demons,names of deities
+vehapphala 2,adj,epithet of a class of devas,names of deities
+veḷaṭṭhasīsa,masc,name of a monk,names of monks
+veḷukaṇḍakiyā,fem,name of a lay disciple,names of laypeople
+veḷukaṇḍakī,fem,name of a lay disciple,names of laypeople
+hatthaka 1,masc,name of a layman in Āḷavī,names of lay disciples
+hatthipāla,masc,name of a teacher of old,names of ascetics
+harī,masc,name of a group of deities,names of deities
+haliddikāni,masc,name of a householder,names of laypeople
+hāragajā,masc,name of a group of deities,names of deities
+hārita,masc,name of a god,names of deities
+hāliddakāni,masc,name of a householder,names of laypeople
+hāliddika,masc,name of a householder,names of laypeople
+hāliddikāni,masc,name of a householder,names of laypeople
+hemavatā,masc,name of a group of demons,names of deities
+hevamata,masc,name of a spirit,names of deities
+uggatasarīra,masc,name of a Brahman,names of Brahmans
+araka,masc,name of a religious teacher of old,names of ascetics
+migāra,masc,name of a wealthy layman,names of laypeople
+meghiya,masc,name of a monk; attendant of the Buddha,names of monks
+ummadantī,fem,name of the daughter of a wealthy banker,names of laypeople
+bhadda 5,masc,name of a monk,names of monks
