@@ -58,6 +58,14 @@ for i in range(1, 7):
     headings.append(f'u{i}_sbs_chapter')
 # pprint(headings)
 
+NAMES = []
+with open('names.txt') as f:
+    dict_reader = csv.DictReader(f, delimiter=',')
+    for row in dict_reader:
+        name = re.sub(r'\s[\d\.\s]+$', '', row['pali_1'])
+        NAMES.append(name)
+pprint(NAMES)
+
 with open(csv_file) as f, \
         open('output/unified_data.csv', 'w') as f_out, \
         open('output/deleted_example.txt', 'w') as deleted_out, \
