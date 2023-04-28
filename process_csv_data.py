@@ -8,7 +8,6 @@ import re
 
 def clean_sentence(example):
     example = re.sub(r'<[^>]+>', '', example)
-    # example = re.sub(r'\b(bhante|bhikkhave)\b', '', example)
     example = example.replace('&nbsp;', ' ')
     example = example.translate(str.maketrans('', '', "'?.!-,"))
     example = re.sub(r'\s+', ' ', example)
@@ -18,14 +17,7 @@ def clean_sentence(example):
     for word in words:
         if word not in NAMES:
             result_words.append(word) 
-        # else:
-        #     print(word)
     filtered_example = ' '.join(result_words)
-    # filtered_example = filtered_example.strip()
-    # if example != filtered_example:
-    #     print(example)
-    #     print(filtered_example)
-    #     print('------------------')
     return filtered_example
 
 
@@ -78,7 +70,7 @@ with open('names.txt') as f:
     for row in dict_reader:
         name = re.sub(r'\s[\d\.\s]+$', '', row['pali_1'])
         NAMES.append(name)
-NAMES = NAMES + ['bhante', 'bhikkhave']
+NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 # pprint(NAMES)
 
 with open(csv_file) as f, \
