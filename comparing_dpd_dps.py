@@ -24,7 +24,7 @@ with open(csv_file) as f, \
             headings = ['id', 'pali_1', 'meaning_1', 'meaning_lit']
         else:
             headings = ['id', 'pali_1', name]
-        dict_writers[name] = csv.DictWriter(file, headings, delimiter='\t')
+        dict_writers[name] = csv.DictWriter(file, headings)
         dict_writers[name].writeheader()
 
     for row in dict_reader:
