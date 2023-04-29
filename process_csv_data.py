@@ -43,18 +43,19 @@ def example_group(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_
     return group
 
 
-csv_file = "dps-dpd-ex.csv"
 SIMPLE_BOUND = 96
 PARTIAL_BOUND = 95
 count_deleted_example = 0
 total_example = 0
 modified_entry = 0
 total_entry = 0
+
+csv_file = "dps-dpd-ex.csv"
+
+# read headings from csv_file
 with open(csv_file) as f:
     reader = csv.reader(f, delimiter='\t')
     headings = next(reader)
-    # pprint(headings)
-mini_headings = ['id', 'pali_1']
 for i in range(1, 7):
     headings.append(f'u{i}_source')
     headings.append(f'u{i}_sutta')
@@ -63,13 +64,16 @@ for i in range(1, 7):
     headings.append(f'u{i}_chant_pali')
     headings.append(f'u{i}_chant_eng')
     headings.append(f'u{i}_sbs_chapter')
+
+# create mini_headings
+mini_headings = ['id', 'pali_1']
 for i in range(1, 5):
     mini_headings.append(f'u{i}_source')
     mini_headings.append(f'u{i}_sutta')
     mini_headings.append(f'u{i}_example')
     mini_headings.append(f'u{i}_dpd')
-# pprint(headings)
 
+# create list of names
 NAMES = []
 with open('names.txt') as f:
     dict_reader = csv.DictReader(f, delimiter=',')
@@ -77,31 +81,36 @@ with open('names.txt') as f:
         name = re.sub(r'\s[\d\.\s]+$', '', row['pali_1'])
         NAMES.append(name)
 NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
-# pprint(NAMES)
 
 with open(csv_file) as f, \
         open('output/unified_data.csv', 'w') as f_out, \
         open('output/unified_data_mini.csv', 'w') as f_out_mini, \
         open('output/deleted_example.txt', 'w') as deleted_out, \
         open('output/unmodified_entry.txt', 'w') as unmodified_out:
-    dict_reader = csv.DictReader(f, delimiter='\t')
+
+    # prepare output files
     dict_writer = csv.DictWriter(f_out, headings)
     dict_writer.writeheader()
     mini_dict_writer = csv.DictWriter(f_out_mini, mini_headings)
     mini_dict_writer.writeheader()
+
     # read csv into dictionary
+    dict_reader = csv.DictReader(f, delimiter='\t')
     for index, row in enumerate(dict_reader):
         total_entry += 1
 
         # if index == 100:
         #     break
 
+        # create a list of all dpd examples
         dpd_list = []
         for i in range(1, 3):
             if row[f'DPD_example_{i}']:
                 group = example_group(
                     row[f'DPD_source_{i}'], row[f'DPD_sutta_{i}'], row[f'DPD_example_{i}'], True)
                 dpd_list.append(group)
+
+        # create lists to sort dps examples
         sbs_class_examples = []
         sbs_examples = []
         other_examples = []
@@ -131,17 +140,22 @@ with open(csv_file) as f, \
                 sbs_examples[1:] + other_examples
         else:
             dps_list = sbs_class_examples + other_examples
+
         deleted_list = []
         modified = False
+        # loop through dps_list and compare them with dpd_list
         for dps in dps_list[:]:
             total_example += 1
+            # mark dps as tentatively not being removed
             removed = False
             for dpd in dpd_list:
+                # clean up examples before comparing them
                 example_cleaned = clean_sentence(dps['example'])
                 dpd_cleaned = clean_sentence(dpd['example'])
                 simple_ratio = fuzz.ratio(example_cleaned, dpd_cleaned)
                 partial_ratio = fuzz.partial_ratio(
                     example_cleaned, dpd_cleaned)
+                # check the similarity and partial similarity
                 if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND or \
                         (partial_ratio >= 94 and dps['source'] == dpd['source']):
                     if dps['chant_pali']:
@@ -150,9 +164,11 @@ with open(csv_file) as f, \
                         dpd['chant_eng'] = dps['chant_eng']
                     if dps['sbs_chapter']:
                         dpd['sbs_chapter'] = dps['sbs_chapter']
+                    # mark dps as being removed
                     removed = True
                     deleted_list.append(example_cleaned)
                     break
+            # remove marked dps from dps_list
             if removed:
                 modified = True
                 count_deleted_example += 1
@@ -171,6 +187,7 @@ with open(csv_file) as f, \
         unified_list = dpd_list + dps_list
         for i, unified in enumerate(unified_list):
             i += 1
+            # expand current row to include unified examples
             row[f'u{i}_source'] = unified['source']
             row[f'u{i}_sutta'] = unified['sutta']
             row[f'u{i}_example'] = unified['example']
