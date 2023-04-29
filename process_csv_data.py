@@ -97,7 +97,16 @@ with open(csv_file) as f, \
         sbs_examples = []
         other_examples = []
         dps_list = []
-        for i in range(1, 5):
+        for i in range(1, 3):
+            if row[f'example_{i}']:
+                group = example_group(
+                    row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False, 
+                    row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
+                if row[f'sbs_chapter_{i}']:
+                    sbs_examples.append(group)
+                else:
+                    other_examples.append(group)
+        for i in range(3, 5):
             if row[f'sbs_example_{i}']:
                 group = example_group(
                     row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False, 
