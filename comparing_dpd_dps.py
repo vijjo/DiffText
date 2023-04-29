@@ -3,9 +3,9 @@ from os.path import basename
 
 csv_file = 'dps-dpd-ex.csv'
 
-with open(csv_file) as f:
-    reader = csv.reader(f, delimiter='\t')
-    headings = next(reader)
+# with open(csv_file) as f:
+#     reader = csv.reader(f, delimiter='\t')
+#     headings = next(reader)
 
 with open(csv_file) as f, \
         open('filtered_csv/plus_case.csv', 'w') as plus_case, \
@@ -24,6 +24,7 @@ with open(csv_file) as f, \
     dict_writers = {}
     for file in out_files:
         name = basename(file.name)[:-4]
+        headings = ['id', 'pali_1', name]
         dict_writers[name] = csv.DictWriter(file, headings, delimiter='\t')
         dict_writers[name].writeheader()
     print(dict_writers.keys())
@@ -32,7 +33,8 @@ with open(csv_file) as f, \
         for name in dict_writers.keys():
             dpd_name = 'DPD_' + name
             if row[name] and not row[dpd_name]:
-                dict_writers[name].writerow(row)
+                filtered_row = {'id': row['id'], 'pali_1': row['pali_1'], name: row[name]}
+                dict_writers[name].writerow(filtered_row)
     #     if row['plus_case'] and not row['DPD_plus_case']:
         
         
