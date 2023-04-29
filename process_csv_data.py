@@ -1,7 +1,6 @@
 import csv
 from pprint import pprint
 import difflib
-# from difflib import SequenceMatcher
 from thefuzz import fuzz
 import re
 
@@ -37,10 +36,10 @@ def ratios(sent1, sent2):
     return [simple, partial, token_sort, token_set]
 
 
-def example_group(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_chapter=''):
-    group = {'source': source, 'sutta': sutta, 'example': example, 'dpd': dpd,
+def example_dict(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_chapter=''):
+    dict_entry = {'source': source, 'sutta': sutta, 'example': example, 'dpd': dpd,
              'chant_pali': chant_pali, 'chant_eng': chant_eng, 'sbs_chapter': sbs_chapter}
-    return group
+    return dict_entry
 
 
 SIMPLE_BOUND = 96
@@ -106,9 +105,9 @@ with open(csv_file) as f, \
         dpd_list = []
         for i in range(1, 3):
             if row[f'DPD_example_{i}']:
-                group = example_group(
+                dict_entry = example_dict(
                     row[f'DPD_source_{i}'], row[f'DPD_sutta_{i}'], row[f'DPD_example_{i}'], True)
-                dpd_list.append(group)
+                dpd_list.append(dict_entry)
 
         # create lists to sort dps examples
         sbs_class_examples = []
@@ -117,24 +116,24 @@ with open(csv_file) as f, \
         dps_list = []
         for i in range(1, 3):
             if row[f'example_{i}']:
-                group = example_group(
+                dict_entry = example_dict(
                     row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
                 if row[f'sbs_chapter_{i}']:
-                    sbs_examples.append(group)
+                    sbs_examples.append(dict_entry)
                 else:
-                    other_examples.append(group)
+                    other_examples.append(dict_entry)
         for i in range(3, 5):
             if row[f'sbs_example_{i}']:
-                group = example_group(
+                dict_entry = example_dict(
                     row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False,
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
                 if i == 3 and row['sbs_class_anki']:
-                    sbs_class_examples.append(group)
+                    sbs_class_examples.append(dict_entry)
                 elif row[f'sbs_chapter_{i}']:
-                    sbs_examples.append(group)
+                    sbs_examples.append(dict_entry)
                 else:
-                    other_examples.append(group)
+                    other_examples.append(dict_entry)
         if sbs_examples:
             dps_list = sbs_examples[0:1] + sbs_class_examples + \
                 sbs_examples[1:] + other_examples
