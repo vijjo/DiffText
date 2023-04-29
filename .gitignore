@@ -163,4 +163,5 @@ cython_debug/
 *.txt
 filtered_csv/
 *.csv
+*.tsv
 dps-dpd-ex.csv
