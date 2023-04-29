@@ -74,7 +74,7 @@ NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 # pprint(NAMES)
 
 with open(csv_file) as f, \
-        open('output/unified_data.csv', 'w') as f_out, \
+        open('output/unified_data.tsv', 'w') as f_out, \
         open('output/deleted_example.txt', 'w') as deleted_out, \
         open('output/unmodified_entry.txt', 'w') as unmodified_out:
     dict_reader = csv.DictReader(f, delimiter='\t')
