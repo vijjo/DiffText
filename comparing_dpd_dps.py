@@ -20,7 +20,10 @@ with open(csv_file) as f, \
     dict_writers = {}
     for file in out_files:
         name = basename(file.name)[:-4]
-        headings = ['id', 'pali_1', name]
+        if name.startswith('meaning'):
+            headings = ['id', 'pali_1', 'meaning_1', 'meaning_lit']
+        else:
+            headings = ['id', 'pali_1', name]
         dict_writers[name] = csv.DictWriter(file, headings, delimiter='\t')
         dict_writers[name].writeheader()
 
@@ -28,6 +31,10 @@ with open(csv_file) as f, \
         for name in dict_writers.keys():
             dpd_name = 'DPD_' + name
             if row[name] and not row[dpd_name]:
-                filtered_row = {
-                    'id': row['id'], 'pali_1': row['pali_1'], name: row[name]}
+                if name.startswith('meaning'):
+                    filtered_row = {'id': row['id'], 'pali_1': row['pali_1'],
+                                    'meaning_1': row['meaning_1'], 'meaning_lit': row['meaning_lit']}
+                else:
+                    filtered_row = {
+                        'id': row['id'], 'pali_1': row['pali_1'], name: row[name]}
                 dict_writers[name].writerow(filtered_row)
