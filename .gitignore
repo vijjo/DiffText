@@ -166,3 +166,4 @@ unmodified_entry.txt
 deleted_example.txt
 ~$dpd-dps-data.xlsx
 filtered_csv/
+*.csv
