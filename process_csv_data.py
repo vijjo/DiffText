@@ -54,6 +54,7 @@ with open(csv_file) as f:
     reader = csv.reader(f, delimiter='\t')
     headings = next(reader)
     # pprint(headings)
+mini_headings = ['id', 'pali_1']
 for i in range(1, 7):
     headings.append(f'u{i}_source')
     headings.append(f'u{i}_sutta')
@@ -62,6 +63,11 @@ for i in range(1, 7):
     headings.append(f'u{i}_chant_pali')
     headings.append(f'u{i}_chant_eng')
     headings.append(f'u{i}_sbs_chapter')
+for i in range(1, 5):
+    mini_headings.append(f'u{i}_source')
+    mini_headings.append(f'u{i}_sutta')
+    mini_headings.append(f'u{i}_example')
+    mini_headings.append(f'u{i}_dpd')
 # pprint(headings)
 
 NAMES = []
@@ -75,11 +81,14 @@ NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 
 with open(csv_file) as f, \
         open('output/unified_data.csv', 'w') as f_out, \
+        open('output/unified_data_mini.csv', 'w') as f_out_mini, \
         open('output/deleted_example.txt', 'w') as deleted_out, \
         open('output/unmodified_entry.txt', 'w') as unmodified_out:
     dict_reader = csv.DictReader(f, delimiter='\t')
-    dict_writer = csv.DictWriter(f_out, headings, delimiter='\t')
+    dict_writer = csv.DictWriter(f_out, headings)
     dict_writer.writeheader()
+    mini_dict_writer = csv.DictWriter(f_out_mini, mini_headings)
+    mini_dict_writer.writeheader()
     # read csv into dictionary
     for index, row in enumerate(dict_reader):
         total_entry += 1
@@ -170,6 +179,20 @@ with open(csv_file) as f, \
             row[f'u{i}_chant_eng'] = unified['chant_eng']
             row[f'u{i}_sbs_chapter'] = unified['sbs_chapter']
         dict_writer.writerow(row)
+
+        # write unified_data_mini.csv
+        mini_row = {}
+        mini_row['id'] = row['id']
+        mini_row['pali_1'] = row['pali_1']
+        for i, unified in enumerate(unified_list):
+            i += 1
+            mini_row[f'u{i}_source'] = unified['source']
+            mini_row[f'u{i}_sutta'] = unified['sutta']
+            mini_row[f'u{i}_example'] = unified['example']
+            mini_row[f'u{i}_dpd'] = unified['dpd']
+            if i == 4:
+                break
+        mini_dict_writer.writerow(mini_row)
 
 print(f'Simple Bound: {SIMPLE_BOUND}\tPartial Bound: {PARTIAL_BOUND}')
 print(f'Total number of examples: {total_example}')
