@@ -16,7 +16,7 @@ def clean_sentence(example):
     result_words = []
     for word in words:
         if word not in NAMES:
-            result_words.append(word) 
+            result_words.append(word)
     filtered_example = ' '.join(result_words)
     return filtered_example
 
@@ -100,7 +100,7 @@ with open(csv_file) as f, \
         for i in range(1, 3):
             if row[f'example_{i}']:
                 group = example_group(
-                    row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False, 
+                    row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
                 if row[f'sbs_chapter_{i}']:
                     sbs_examples.append(group)
@@ -109,7 +109,7 @@ with open(csv_file) as f, \
         for i in range(3, 5):
             if row[f'sbs_example_{i}']:
                 group = example_group(
-                    row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False, 
+                    row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False,
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
                 if i == 3 and row['sbs_class_anki']:
                     sbs_class_examples.append(group)
@@ -118,7 +118,8 @@ with open(csv_file) as f, \
                 else:
                     other_examples.append(group)
         if sbs_examples:
-            dps_list = sbs_examples[0:1] + sbs_class_examples + sbs_examples[1:] + other_examples
+            dps_list = sbs_examples[0:1] + sbs_class_examples + \
+                sbs_examples[1:] + other_examples
         else:
             dps_list = sbs_class_examples + other_examples
         deleted_list = []
@@ -133,7 +134,7 @@ with open(csv_file) as f, \
                 partial_ratio = fuzz.partial_ratio(
                     example_cleaned, dpd_cleaned)
                 if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND or \
-                    (partial_ratio >= 94 and dps['source'] == dpd['source']):
+                        (partial_ratio >= 94 and dps['source'] == dpd['source']):
                     if dps['chant_pali']:
                         dpd['chant_pali'] = dps['chant_pali']
                     if dps['chant_eng']:
@@ -147,7 +148,7 @@ with open(csv_file) as f, \
                 modified = True
                 count_deleted_example += 1
                 dps_list.remove(dps)
-        
+
         # write into txt files: deleted_examples & unmodified entries
         if modified:
             modified_entry += 1
@@ -156,7 +157,7 @@ with open(csv_file) as f, \
                 deleted_out.write(f'•\t{example_cleaned}\n')
         else:
             unmodified_out.write(f"{row['id']}\t{row['pali_1']}\n")
-        
+
         # write unified_data.csv
         unified_list = dpd_list + dps_list
         for i, unified in enumerate(unified_list):
