@@ -7,11 +7,66 @@ import re
 SIMPLE_BOUND = 85
 PARTIAL_BOUND = 80
 TOKEN_BOUND = 80
-WORD_LIST = ['', '']
-SUTTA_LIST = [
+WORD_LIST = [
     '',
     '',
 ]
+SUTTA_LIST = ['nīvaraṇappahāna',
+              'pabbajitābhiṇhasuttaṃ',
+              'sacittasuttaṃ',
+              'girimānandasuttaṃ',
+              'mettāsuttaṃ',
+              'loṇakapallasuttaṃ',
+              'devadūtasuttaṃ',
+              'kesamuttisuttaṃ',
+              'abhayasuttaṃ',
+              'rohitassasuttaṃ',
+              'vipallāsasuttaṃ',
+              'sappurisasuttaṃ',
+              'abhiṇhapaccavekkhitabbaṭhānasuttaṃ',
+              'soṇasuttaṃ',
+              'majjhesuttaṃ',
+              'nibbedhikasuttaṃ',
+              'pacalāyamānasuttaṃ',
+              'mettāsuttaṃ',
+              'paññāsuttaṃ',
+              'sīhanādasuttaṃ',
+              'mahāsatipaṭṭhānasuttaṃ',
+              'gaṇakamoggallānasuttaṃ',
+              'ānāpānassatisuttaṃ',
+              'saḷāyatanavibhaṅgasuttaṃ',
+              'araṇavibhaṅgasuttaṃ',
+              'indriyabhāvanāsuttaṃ',
+              'madhupiṇḍikasuttaṃ',
+              'dvedhāvitakkasuttaṃ',
+              'sabbāsavasuttaṃ',
+              'vitakkasaṇṭhānasuttaṃ',
+              'mahāassapurasuttaṃ',
+              'mahārāhulovādasuttaṃ',
+              'sallekhasuttaṃ',
+              'puttamaṃsūpamasuttaṃ',
+              'nakulapitusuttaṃ',
+              'dutiyagaddulabaddhasuttaṃ',
+              'vāsijaṭasuttaṃ',
+              'soṇasuttaṃ',
+              'khajjanīyasuttaṃ',
+              'yamakasuttaṃ',
+              'pheṇapiṇḍūpamasuttaṃ',
+              'udāyīsuttaṃ',
+              'ādittapariyāyasuttaṃ',
+              'āsīvisopamasuttaṃ',
+              'kummopamasuttaṃ',
+              'paṭhamadārukkhandhopamasuttaṃ',
+              'vīṇopamasuttaṃ',
+              'chappāṇakopamasuttaṃ',
+              'yavakalāpisuttaṃ',
+              'channasuttaṃ',
+              'mālukyaputtasuttaṃ',
+              'bhadrakasuttaṃ',
+              'saṅgāravasuttaṃ',
+              'bhikkhunupassayasuttaṃ',
+              'janapadakalyāṇīsuttaṃ',
+              'bāhiyasuttaṃ']
 
 def clean_sentence(example):
     # example = re.sub(r'<[^>]+>', '', example)
@@ -137,6 +192,7 @@ with open(csv_file) as f, \
                     elif row[f'source_{i}'].startswith('VIN PAT'):
                         vinaya_examples.append(dict_entry)
                     elif row[f'sutta_{i}'] in SUTTA_LIST:
+                        # print(row[f'sutta_{i}'])
                         sutta_examples.append(dict_entry)
                     else:
                         other_examples.append(dict_entry)
@@ -153,8 +209,10 @@ with open(csv_file) as f, \
                     if row[f'sbs_source_{i}'].startswith('DHP'):
                         dhammmapda_examples.append(dict_entry)
                     elif row[f'sbs_source_{i}'].startswith('VIN PAT'):
+                        # print(row[f'sbs_source_{i}'])
                         vinaya_examples.append(dict_entry)
                     elif row[f'sbs_sutta_{i}'] in SUTTA_LIST:
+                        # print(row[f'sbs_sutta_{i}'])
                         sutta_examples.append(dict_entry)
                     else:
                         other_examples.append(dict_entry)
