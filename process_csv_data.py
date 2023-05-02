@@ -4,11 +4,20 @@ import difflib
 from thefuzz import fuzz
 import re
 
+SIMPLE_BOUND = 85
+PARTIAL_BOUND = 80
+TOKEN_BOUND = 80
+WORD_LIST = ['', '']
+SUTTA_LIST = [
+    '',
+    '',
+]
 
 def clean_sentence(example):
-    example = re.sub(r'<[^>]+>', '', example)
+    # example = re.sub(r'<[^>]+>', '', example)
+    example = re.sub(r'<br/>', '', example)
     example = example.replace('&nbsp;', ' ')
-    example = example.translate(str.maketrans('', '', "'?.!-,"))
+    example = example.translate(str.maketrans('', '', "'?.!-,…"))
     example = re.sub(r'\s+', ' ', example)
     example = example.strip()
     words = example.split()
@@ -42,8 +51,6 @@ def example_dict(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_c
     return dict_entry
 
 
-SIMPLE_BOUND = 96
-PARTIAL_BOUND = 95
 count_deleted_example = 0
 total_example = 0
 modified_entry = 0
@@ -112,6 +119,9 @@ with open(csv_file) as f, \
         # create lists to sort dps examples
         sbs_class_examples = []
         sbs_examples = []
+        vinaya_examples = []
+        dhammmapda_examples = []
+        sutta_examples = []
         other_examples = []
         dps_list = []
         for i in range(1, 3):
@@ -122,7 +132,14 @@ with open(csv_file) as f, \
                 if row[f'sbs_chapter_{i}']:
                     sbs_examples.append(dict_entry)
                 else:
-                    other_examples.append(dict_entry)
+                    if row[f'source_{i}'].startswith('DHP'):
+                        dhammmapda_examples.append(dict_entry)
+                    elif row[f'source_{i}'].startswith('VIN PAT'):
+                        vinaya_examples.append(dict_entry)
+                    elif row[f'sutta_{i}'] in SUTTA_LIST:
+                        sutta_examples.append(dict_entry)
+                    else:
+                        other_examples.append(dict_entry)
         for i in range(3, 5):
             if row[f'sbs_example_{i}']:
                 dict_entry = example_dict(
@@ -133,12 +150,22 @@ with open(csv_file) as f, \
                 elif row[f'sbs_chapter_{i}']:
                     sbs_examples.append(dict_entry)
                 else:
-                    other_examples.append(dict_entry)
+                    if row[f'sbs_source_{i}'].startswith('DHP'):
+                        dhammmapda_examples.append(dict_entry)
+                    elif row[f'sbs_source_{i}'].startswith('VIN PAT'):
+                        vinaya_examples.append(dict_entry)
+                    elif row[f'sbs_sutta_{i}'] in SUTTA_LIST:
+                        sutta_examples.append(dict_entry)
+                    else:
+                        other_examples.append(dict_entry)
         if sbs_examples:
             dps_list = sbs_examples[0:1] + sbs_class_examples + \
+                vinaya_examples + sutta_examples + dhammmapda_examples + \
                 sbs_examples[1:] + other_examples
         else:
-            dps_list = sbs_class_examples + other_examples
+            dps_list = sbs_class_examples + \
+                vinaya_examples + sutta_examples + dhammmapda_examples + \
+                other_examples
 
         deleted_list = []
         modified = False
@@ -154,9 +181,17 @@ with open(csv_file) as f, \
                 simple_ratio = fuzz.ratio(example_cleaned, dpd_cleaned)
                 partial_ratio = fuzz.partial_ratio(
                     example_cleaned, dpd_cleaned)
+                token_set_ratio = fuzz.token_set_ratio(example_cleaned, dpd_cleaned)
+
+                if row['pali_1'] in WORD_LIST:
+                    print(row['pali_1'])
+                    print(ratios(example_cleaned, dpd_cleaned))
+                    print(show_diff(example_cleaned, dpd_cleaned))
+                    print('----------------------------------------------------------------')
+
                 # check the similarity and partial similarity
                 if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND or \
-                        (partial_ratio >= 94 and dps['source'] == dpd['source']):
+                        (token_set_ratio >= TOKEN_BOUND):
                     if dps['chant_pali']:
                         dpd['chant_pali'] = dps['chant_pali']
                     if dps['chant_eng']:
