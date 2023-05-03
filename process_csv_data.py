@@ -11,6 +11,19 @@ WORD_LIST = [
     '',
     '',
 ]
+SBS_PRIORITY = ['Verses',
+                'Teachings',
+                'Reflections',
+                'Cardinal Suttas',
+                'Thanksgiving Recitations',
+                'Protective Recitations',
+                'Funeral Chants',
+                'Sharing of Merits',
+                'Homage to the Triple Gem',
+                'International Pātimokkha',
+                'Post Pātimokkha',
+                'Prefixes'
+                ]
 SUTTA_LIST = ['nīvaraṇappahāna',
               'pabbajitābhiṇhasuttaṃ',
               'sacittasuttaṃ',
@@ -68,6 +81,7 @@ SUTTA_LIST = ['nīvaraṇappahāna',
               'janapadakalyāṇīsuttaṃ',
               'bāhiyasuttaṃ']
 
+
 def clean_sentence(example):
     # example = re.sub(r'<[^>]+>', '', example)
     example = re.sub(r'<br/>', '', example)
@@ -100,9 +114,9 @@ def ratios(sent1, sent2):
     return [simple, partial, token_sort, token_set]
 
 
-def example_dict(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_chapter=''):
+def example_dict(source, sutta, example, dpd, chant_pali='', chant_eng='', sbs_chapter='', priority: int = 999):
     dict_entry = {'source': source, 'sutta': sutta, 'example': example, 'dpd': dpd,
-             'chant_pali': chant_pali, 'chant_eng': chant_eng, 'sbs_chapter': sbs_chapter}
+             'chant_pali': chant_pali, 'chant_eng': chant_eng, 'sbs_chapter': sbs_chapter, 'priority': priority}
     return dict_entry
 
 
@@ -185,6 +199,8 @@ with open(csv_file) as f, \
                     row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
                     row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
                 if row[f'sbs_chapter_{i}']:
+                    if dict_entry['sbs_chapter'] in SBS_PRIORITY:
+                        dict_entry['priority'] = SBS_PRIORITY.index(dict_entry['sbs_chapter'])
                     sbs_examples.append(dict_entry)
                 else:
                     if row[f'source_{i}'].startswith('DHP'):
@@ -204,6 +220,8 @@ with open(csv_file) as f, \
                 if i == 3 and row['sbs_class_anki']:
                     sbs_class_examples.append(dict_entry)
                 elif row[f'sbs_chapter_{i}']:
+                    if dict_entry['sbs_chapter'] in SBS_PRIORITY:
+                        dict_entry['priority'] = SBS_PRIORITY.index(dict_entry['sbs_chapter'])
                     sbs_examples.append(dict_entry)
                 else:
                     if row[f'sbs_source_{i}'].startswith('DHP'):
@@ -217,6 +235,8 @@ with open(csv_file) as f, \
                     else:
                         other_examples.append(dict_entry)
         if sbs_examples:
+            # sort sbs_examples by chapters in SBS_PRIORITY
+            sbs_examples = sorted(sbs_examples, key=lambda k: k['priority'])
             dps_list = sbs_examples[0:1] + sbs_class_examples + \
                 vinaya_examples + sutta_examples + dhammmapda_examples + \
                 sbs_examples[1:] + other_examples
