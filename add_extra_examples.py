@@ -6,17 +6,19 @@ from pprint import pprint
 import re
 
 CSV_DATA = 'dps-full.csv'
+CSV_FIXED = 'data-fixed.csv'
 CSV_EXTRA = 'extra-ex.csv'
+CSV_EXTRA_FIXED = 'extra-fixed.csv'
 SIMPLE_BOUND = 95
 PARTIAL_BOUND = 94
 TOKEN_BOUND = 95
 BOUNDS = {'simple': SIMPLE_BOUND,
           'partial': PARTIAL_BOUND, 'token': TOKEN_BOUND}
 EXCLUDED_HEADERS = [
-    'source_1', 'sutta_1', 'example_1', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1',
-    'source_2', 'sutta_2', 'example_2', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2',
+    'sbs_source_1', 'sbs_sutta_1', 'sbs_example_1', 'sbs_chant_pali_1', 'sbs_chant_eng_1', 'sbs_chapter_1',
+    'sbs_source_2', 'sbs_sutta_2', 'sbs_example_2', 'sbs_chant_pali_2', 'sbs_chant_eng_2', 'sbs_chapter_2',
     'sbs_source_3', 'sbs_sutta_3', 'sbs_example_3', 'sbs_chant_pali_3', 'sbs_chant_eng_3', 'sbs_chapter_3',
-    'sbs_source_4', 'sbs_sutta_4', 'sbs_example_4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4'
+    'sbs_source_4', 'sbs_sutta_4', 'sbs_example_4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4',
     'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5'
 ]
 
@@ -29,20 +31,12 @@ def heading_list(csv_file, example_number):
             headers.remove(header)
     for i in range(example_number):
         i += 1
-        if i <= 2:
-            headers.append(f'source_{i}')
-            headers.append(f'sutta_{i}')
-            headers.append(f'example_{i}')
-            headers.append(f'sbs_chant_pali_{i}')
-            headers.append(f'sbs_chant_eng_{i}')
-            headers.append(f'sbs_chapter_{i}')
-        if i > 2:
-            headers.append(f'sbs_source_{i}')
-            headers.append(f'sbs_sutta_{i}')
-            headers.append(f'sbs_example_{i}')
-            headers.append(f'sbs_chant_pali_{i}')
-            headers.append(f'sbs_chant_eng_{i}')
-            headers.append(f'sbs_chapter_{i}')
+        headers.append(f'sbs_source_{i}')
+        headers.append(f'sbs_sutta_{i}')
+        headers.append(f'sbs_example_{i}')
+        headers.append(f'sbs_chant_pali_{i}')
+        headers.append(f'sbs_chant_eng_{i}')
+        headers.append(f'sbs_chapter_{i}')
     return headers
     
 
@@ -55,13 +49,7 @@ def extract_dicts(csv_file, delimiter=','):
         for row in dict_reader:
             data_example_list = []
             data_dict[row['id']] = row
-            for i in range(1, 3):
-                if row[f'example_{i}']:
-                    dict_entry = example_dict(
-                        row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
-                        row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
-                    data_example_list.append(dict_entry)
-            for i in range(3, 6):
+            for i in range(1, 6):
                 if f'sbs_example_{i}' in row:
                     if row[f'sbs_example_{i}']:
                         dict_entry = example_dict(
@@ -108,6 +96,42 @@ def clean_sentence(example):
     return filtered_example
 
 
+def fix_csv(csv_file, fixed_file, delimiter=','):
+    with open(csv_file, 'r') as f, \
+            open(fixed_file, 'w') as f_out:
+        reader = csv.reader(f, delimiter=delimiter)
+        writer = csv.writer(f_out)
+        for index, row in enumerate(reader):
+            if index == 0:
+                print(row)
+                for i in range(len(row)):
+                    pattern = re.compile(r'^(source|sutta|example)(_\d)$')
+                    if pattern.match(row[i]):
+                        row[i] = pattern.sub(r'sbs_\1\2', row[i])
+                writer.writerow(row)
+                print(row)
+            else:
+                writer.writerow(row)
+    return fixed_file
+
+def unfix_csv(csv_file, unfixed_file, delimiter=','):
+    with open(csv_file, 'r') as f, \
+            open(unfixed_file, 'w') as f_out:
+        reader = csv.reader(f, delimiter=delimiter)
+        writer = csv.writer(f_out)
+        for index, row in enumerate(reader):
+            if index == 0:
+                print(row)
+                for i in range(len(row)):
+                    pattern = re.compile(r'^sbs_(source|sutta|example)(_(?:1|2))$')
+                    if pattern.match(row[i]):
+                        row[i] = pattern.sub(r'\1\2', row[i])
+                writer.writerow(row)
+                print(row)
+            else:
+                writer.writerow(row)
+    return unfixed_file
+
 if __name__ == '__main__':
     # create list of names
     NAMES = []
@@ -118,8 +142,11 @@ if __name__ == '__main__':
             NAMES.append(name)
     NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 
-    data_dict, data_example_dict = extract_dicts(CSV_DATA)
-    extra_example_dict = extract_dicts(CSV_EXTRA)[1]
+    fix_csv(CSV_DATA, CSV_FIXED)
+    fix_csv(CSV_EXTRA, CSV_EXTRA_FIXED)
+
+    data_dict, data_example_dict = extract_dicts(CSV_FIXED)
+    extra_example_dict = extract_dicts(CSV_EXTRA_FIXED)[1]
     unified_example_dict = {}
     unified_dict = {}
     example_number = 0
@@ -134,7 +161,7 @@ if __name__ == '__main__':
         else:
             unified_example_dict[key] = data_example_dict[key]
     
-    headers = heading_list(CSV_DATA, example_number)
+    headers = heading_list(CSV_FIXED, example_number)
     pprint(headers)
 
     for key in data_dict.keys():
@@ -144,41 +171,25 @@ if __name__ == '__main__':
                 row[header] = data_dict[key][header]
         for i in range(example_number):
             i += 1
-            if i <= 2:
-                if i <= len(unified_example_dict[key]):
-                    # pprint(unified_example_dict[key])
-                    row[f'source_{i}'] = unified_example_dict[key][i - 1]['source']
-                    row[f'sutta_{i}'] = unified_example_dict[key][i - 1]['sutta']
-                    row[f'example_{i}'] = unified_example_dict[key][i - 1]['example']
-                    row[f'sbs_chant_pali_{i}'] = unified_example_dict[key][i - 1]['chant_pali']
-                    row[f'sbs_chant_eng_{i}'] = unified_example_dict[key][i - 1]['chant_eng']
-                    row[f'sbs_chapter_{i}'] = unified_example_dict[key][i - 1]['sbs_chapter']
-                else:
-                    row[f'source_{i}'] = ""
-                    row[f'sutta_{i}'] = ""
-                    row[f'example_{i}'] = ""
-                    row[f'sbs_chant_pali_{i}'] = ""
-                    row[f'sbs_chant_eng_{i}'] = ""
-                    row[f'sbs_chapter_{i}'] = ""
+            if i <= len(unified_example_dict[key]):
+                row[f'sbs_source_{i}'] = unified_example_dict[key][i - 1]['source']
+                row[f'sbs_sutta_{i}'] = unified_example_dict[key][i - 1]['sutta']
+                row[f'sbs_example_{i}'] = unified_example_dict[key][i - 1]['example']
+                row[f'sbs_chant_pali_{i}'] = unified_example_dict[key][i - 1]['chant_pali']
+                row[f'sbs_chant_eng_{i}'] = unified_example_dict[key][i - 1]['chant_eng']
+                row[f'sbs_chapter_{i}'] = unified_example_dict[key][i - 1]['sbs_chapter']
             else:
-                if i <= len(unified_example_dict[key]):
-                    row[f'sbs_source_{i}'] = unified_example_dict[key][i - 1]['source']
-                    row[f'sbs_sutta_{i}'] = unified_example_dict[key][i - 1]['sutta']
-                    row[f'sbs_example_{i}'] = unified_example_dict[key][i - 1]['example']
-                    row[f'sbs_chant_pali_{i}'] = unified_example_dict[key][i - 1]['chant_pali']
-                    row[f'sbs_chant_eng_{i}'] = unified_example_dict[key][i - 1]['chant_eng']
-                    row[f'sbs_chapter_{i}'] = unified_example_dict[key][i - 1]['sbs_chapter']
-                else:
-                    row[f'sbs_source_{i}'] = ""
-                    row[f'sbs_sutta_{i}'] = ""
-                    row[f'sbs_example_{i}'] = ""
-                    row[f'sbs_chant_pali_{i}'] = ""
-                    row[f'sbs_chant_eng_{i}'] = ""
-                    row[f'sbs_chapter_{i}'] = ""
+                row[f'sbs_source_{i}'] = ""
+                row[f'sbs_sutta_{i}'] = ""
+                row[f'sbs_example_{i}'] = ""
+                row[f'sbs_chant_pali_{i}'] = ""
+                row[f'sbs_chant_eng_{i}'] = ""
+                row[f'sbs_chapter_{i}'] = ""
         unified_dict[key] = row
     with open('data_with_extra.csv', 'w') as f:
-        dict_writer = csv.DictWriter(f, headers, delimiter='\t')
+        dict_writer = csv.DictWriter(f, headers)
         dict_writer.writeheader()
         for key in unified_dict.keys():
             dict_writer.writerow(unified_dict[key])
+    unfix_csv('data_with_extra.csv', 'data_with_extra_fixed.csv')
                 
