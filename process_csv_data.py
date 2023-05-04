@@ -273,12 +273,6 @@ if __name__ == '__main__':
                     # check the similarity and partial similarity
                     if simple_ratio >= SIMPLE_BOUND or partial_ratio >= PARTIAL_BOUND or \
                             (token_set_ratio >= TOKEN_BOUND):
-                        if dps['chant_pali']:
-                            dpd['chant_pali'] = dps['chant_pali']
-                        if dps['chant_eng']:
-                            dpd['chant_eng'] = dps['chant_eng']
-                        if dps['sbs_chapter']:
-                            dpd['sbs_chapter'] = dps['sbs_chapter']
                         # mark dps as being removed
                         removed = True
                         deleted_list.append(example_cleaned)
