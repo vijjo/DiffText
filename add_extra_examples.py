@@ -1,15 +1,12 @@
 import csv
-import clipboard
 from process_csv_data import example_dict
 from thefuzz import fuzz
 from pprint import pprint
 import re
-import os
+
 
 CSV_DATA = 'dps-full.csv'
-CSV_FIXED = 'data-fixed.csv'
 CSV_EXTRA = 'extra-ex.csv'
-CSV_EXTRA_FIXED = 'extra-fixed.csv'
 SIMPLE_BOUND = 95
 PARTIAL_BOUND = 94
 TOKEN_BOUND = 95
@@ -22,6 +19,8 @@ EXCLUDED_HEADERS = [
     'sbs_source_4', 'sbs_sutta_4', 'sbs_example_4', 'sbs_chant_pali_4', 'sbs_chant_eng_4', 'sbs_chapter_4',
     'sbs_source_5', 'sbs_sutta_5', 'sbs_example_5', 'sbs_chant_pali_5', 'sbs_chant_eng_5', 'sbs_chapter_5'
 ]
+CSV_FIXED = 'data-fixed.csv'
+CSV_EXTRA_FIXED = 'extra-fixed.csv'
 
 def heading_list(csv_file, example_number):
     with open(csv_file, 'r') as f:
