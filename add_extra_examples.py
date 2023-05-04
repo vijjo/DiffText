@@ -4,6 +4,7 @@ from process_csv_data import example_dict
 from thefuzz import fuzz
 from pprint import pprint
 import re
+import os
 
 CSV_DATA = 'dps-full.csv'
 CSV_FIXED = 'data-fixed.csv'
@@ -103,13 +104,13 @@ def fix_csv(csv_file, fixed_file, delimiter=','):
         writer = csv.writer(f_out)
         for index, row in enumerate(reader):
             if index == 0:
-                print(row)
+                # print(row)
                 for i in range(len(row)):
                     pattern = re.compile(r'^(source|sutta|example)(_\d)$')
                     if pattern.match(row[i]):
                         row[i] = pattern.sub(r'sbs_\1\2', row[i])
                 writer.writerow(row)
-                print(row)
+                # print(row)
             else:
                 writer.writerow(row)
     return fixed_file
@@ -121,13 +122,13 @@ def unfix_csv(csv_file, unfixed_file, delimiter=','):
         writer = csv.writer(f_out)
         for index, row in enumerate(reader):
             if index == 0:
-                print(row)
+                # print(row)
                 for i in range(len(row)):
                     pattern = re.compile(r'^sbs_(source|sutta|example)(_(?:1|2))$')
                     if pattern.match(row[i]):
                         row[i] = pattern.sub(r'\1\2', row[i])
                 writer.writerow(row)
-                print(row)
+                # print(row)
             else:
                 writer.writerow(row)
     return unfixed_file
@@ -162,7 +163,7 @@ if __name__ == '__main__':
             unified_example_dict[key] = data_example_dict[key]
     
     headers = heading_list(CSV_FIXED, example_number)
-    pprint(headers)
+    # pprint(headers)
 
     for key in data_dict.keys():
         row = {}
@@ -192,4 +193,5 @@ if __name__ == '__main__':
         for key in unified_dict.keys():
             dict_writer.writerow(unified_dict[key])
     unfix_csv('data_with_extra.csv', 'data_with_extra_fixed.csv')
+    os.remove('./data_with_extra.csv')
                 
