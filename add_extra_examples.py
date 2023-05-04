@@ -115,23 +115,22 @@ def fix_csv(csv_file, fixed_file, delimiter=','):
                 writer.writerow(row)
     return fixed_file
 
-def unfix_csv(csv_file, unfixed_file, delimiter=','):
-    with open(csv_file, 'r') as f, \
-            open(unfixed_file, 'w') as f_out:
+def unfix_csv(csv_file, delimiter=','):
+    text = []
+    with open(csv_file, 'r') as f:
         reader = csv.reader(f, delimiter=delimiter)
-        writer = csv.writer(f_out)
         for index, row in enumerate(reader):
             if index == 0:
-                # print(row)
                 for i in range(len(row)):
                     pattern = re.compile(r'^sbs_(source|sutta|example)(_(?:1|2))$')
                     if pattern.match(row[i]):
                         row[i] = pattern.sub(r'\1\2', row[i])
-                writer.writerow(row)
-                # print(row)
+                text.append(row)
             else:
-                writer.writerow(row)
-    return unfixed_file
+                text.append(row)
+    with open(csv_file, 'w') as f_out:
+        writer = csv.writer(f_out)
+        writer.writerows(text)
 
 if __name__ == '__main__':
     # create list of names
@@ -143,7 +142,7 @@ if __name__ == '__main__':
             NAMES.append(name)
     NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 
-    fix_csv(CSV_DATA, CSV_FIXED)
+    fix_csv(CSV_DATA, CSV_FIXED, '\t')
     fix_csv(CSV_EXTRA, CSV_EXTRA_FIXED)
 
     data_dict, data_example_dict = extract_dicts(CSV_FIXED)
@@ -192,6 +191,5 @@ if __name__ == '__main__':
         dict_writer.writeheader()
         for key in unified_dict.keys():
             dict_writer.writerow(unified_dict[key])
-    unfix_csv('data_with_extra.csv', 'data_with_extra_fixed.csv')
-    os.remove('./data_with_extra.csv')
+    unfix_csv('data_with_extra.csv')
                 
