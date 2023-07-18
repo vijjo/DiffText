@@ -126,9 +126,15 @@ if __name__ == '__main__':
     total_entry = 0
 
     csv_file = "dps-dpd-ex.csv"
+    changed_heading_file = "temp-" + csv_file
+
+    with open(csv_file, 'r') as f, \
+        open(changed_heading_file, 'w') as f_out:
+        text = re.sub(r'\t(source|sutta|example)_(1|2)', r'\tsbs_\g<1>_\g<2>', f.read())
+        f_out.write(text)
 
     # read headings from csv_file
-    with open(csv_file) as f:
+    with open(changed_heading_file) as f:
         reader = csv.reader(f, delimiter='\t')
         headings = next(reader)
     for i in range(1, 7):
@@ -157,7 +163,7 @@ if __name__ == '__main__':
             NAMES.append(name)
     NAMES = NAMES + ['bhante', 'bhikkhave', 'na']
 
-    with open(csv_file) as f, \
+    with open(changed_heading_file) as f, \
             open('output/unified_data.csv', 'w') as f_out, \
             open('output/unified_data_mini.csv', 'w') as f_out_mini, \
             open('output/deleted_example.txt', 'w') as deleted_out, \
@@ -194,27 +200,27 @@ if __name__ == '__main__':
             other_examples = []
             dps_list = []
 
-            for i in range(1, 3):
-                if row[f'example_{i}']:
-                    dict_entry = example_dict(
-                        row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
-                        row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
-                    if row[f'sbs_chapter_{i}']:
-                        if dict_entry['sbs_chapter'] in SBS_PRIORITY:
-                            dict_entry['priority'] = SBS_PRIORITY.index(dict_entry['sbs_chapter'])
-                        sbs_examples.append(dict_entry)
-                    else:
-                        if row[f'source_{i}'].startswith('DHP'):
-                            dhammmapda_examples.append(dict_entry)
-                        elif row[f'source_{i}'].startswith('VIN PAT'):
-                            vinaya_examples.append(dict_entry)
-                        elif row[f'sutta_{i}'] in SUTTA_LIST:
-                            # print(row[f'sutta_{i}'])
-                            sutta_examples.append(dict_entry)
-                        else:
-                            other_examples.append(dict_entry)
+            # for i in range(1, 3):
+            #     if row[f'example_{i}']:
+            #         dict_entry = example_dict(
+            #             row[f'source_{i}'], row[f'sutta_{i}'], row[f'example_{i}'], False,
+            #             row[f'sbs_chant_pali_{i}'], row[f'sbs_chant_eng_{i}'], row[f'sbs_chapter_{i}'])
+            #         if row[f'sbs_chapter_{i}']:
+            #             if dict_entry['sbs_chapter'] in SBS_PRIORITY:
+            #                 dict_entry['priority'] = SBS_PRIORITY.index(dict_entry['sbs_chapter'])
+            #             sbs_examples.append(dict_entry)
+            #         else:
+            #             if row[f'source_{i}'].startswith('DHP'):
+            #                 dhammmapda_examples.append(dict_entry)
+            #             elif row[f'source_{i}'].startswith('VIN PAT'):
+            #                 vinaya_examples.append(dict_entry)
+            #             elif row[f'sutta_{i}'] in SUTTA_LIST:
+            #                 # print(row[f'sutta_{i}'])
+            #                 sutta_examples.append(dict_entry)
+            #             else:
+            #                 other_examples.append(dict_entry)
 
-            for i in range(3, 5):
+            for i in range(1, 5):
                 if row[f'sbs_example_{i}']:
                     dict_entry = example_dict(
                         row[f'sbs_source_{i}'], row[f'sbs_sutta_{i}'], row[f'sbs_example_{i}'], False,
@@ -236,7 +242,8 @@ if __name__ == '__main__':
                             sutta_examples.append(dict_entry)
                         else:
                             other_examples.append(dict_entry)
-
+            
+            # create dps_list following the arrangement rules
             if sbs_examples:
                 # sort sbs_examples by chapters in SBS_PRIORITY
                 sbs_examples = sorted(sbs_examples, key=lambda k: k['priority'])
